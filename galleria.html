@@ -31,7 +31,7 @@
         <p class="hero-text">
           Una raccolta di foto dei posti che ho visto, dei momenti che voglio ricordare e
           delle immagini che mi rappresentano. Sotto ogni foto puoi mettere "mi piace" e
-          lasciare un commento.
+          lasciare un commento. Cliccando sulla foto si apre in grande.
         </p>
       </div>
     </section>
@@ -50,7 +50,8 @@
           <!-- FOTO 1 -->
           <div class="photo-card" data-photo="p1">
             <div class="photo-thumb">
-              <img src="foto/viaggio1.jpg" alt="Viaggio 1">
+              <!-- CAMBIA solo il nome file se vuoi: foto1.jpg -> imola.jpg, ecc. -->
+              <img src="foto/foto1.jpg" alt="Foto 1" data-photo-id="p1">
             </div>
             <p class="photo-caption">
               Foto 1 – descrizione del posto o del momento.
@@ -78,7 +79,8 @@
           <!-- FOTO 2 -->
           <div class="photo-card" data-photo="p2">
             <div class="photo-thumb">
-              <img src="foto/viaggio2.jpg" alt="Viaggio 2">
+              <!-- CAMBIA solo foto2.jpg con il nome vero -->
+              <img src="foto/foto2.jpg" alt="Foto 2" data-photo-id="p2">
             </div>
             <p class="photo-caption">
               Foto 2 – un altro momento o panorama che ti piace.
@@ -106,7 +108,8 @@
           <!-- FOTO 3 -->
           <div class="photo-card" data-photo="p3">
             <div class="photo-thumb">
-              <img src="foto/viaggio3.jpg" alt="Viaggio 3">
+              <!-- CAMBIA solo foto3.jpg con il nome vero -->
+              <img src="foto/foto3.jpg" alt="Foto 3" data-photo-id="p3">
             </div>
             <p class="photo-caption">
               Foto 3 – un ricordo particolare o un luogo speciale.
@@ -131,7 +134,8 @@
             </div>
           </div>
 
-          <!-- Se vuoi altre foto, copia un blocco photo-card, cambia p4, p5, ecc. e il src -->
+          <!-- SE VUOI ALTRE FOTO:
+               copia un blocco photo-card, cambia p4, p5... e il nome file in src="foto/...." -->
         </div>
       </div>
     </section>
@@ -142,10 +146,20 @@
 
   </main>
 
-  <!-- SCRIPT: LIKE + COMMENTI PER FOTO -->
+  <!-- MODALE PER FOTO GRANDE -->
+  <div class="photo-modal" id="photo-modal">
+    <div class="photo-modal-backdrop"></div>
+    <div class="photo-modal-content">
+      <button class="photo-modal-close" id="photo-modal-close">✕</button>
+      <img id="modal-image" src="" alt="">
+      <p id="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- SCRIPT: LIKE + COMMENTI PER FOTO + MODALE -->
   <script>
     (function () {
-      const PHOTO_KEY = "nexo_gallery_data";
+      const PHOTO_KEY = "nexo_gallery_data_v2";
 
       function loadStore() {
         try {
@@ -228,10 +242,44 @@
             saveStore(store);
           });
         });
+
+        // MODALE FOTO GRANDE
+        const modal = document.getElementById("photo-modal");
+        const modalImg = document.getElementById("modal-image");
+        const modalCaption = document.getElementById("modal-caption");
+        const modalClose = document.getElementById("photo-modal-close");
+        const modalBackdrop = document.querySelector(".photo-modal-backdrop");
+
+        function openModal(src, caption) {
+          modalImg.src = src;
+          modalCaption.textContent = caption || "";
+          modal.classList.add("open");
+        }
+
+        function closeModal() {
+          modal.classList.remove("open");
+          modalImg.src = "";
+          modalCaption.textContent = "";
+        }
+
+        document.querySelectorAll(".photo-thumb img").forEach(function (img) {
+          img.addEventListener("click", function () {
+            const src = img.getAttribute("src");
+            const card = img.closest(".photo-card");
+            const captionEl = card ? card.querySelector(".photo-caption") : null;
+            const caption = captionEl ? captionEl.textContent.trim() : "";
+            openModal(src, caption);
+          });
+        });
+
+        modalClose.addEventListener("click", closeModal);
+        modalBackdrop.addEventListener("click", closeModal);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModal();
+        });
       });
     })();
   </script>
 
 </body>
 </html>
-
