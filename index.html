@@ -43,6 +43,105 @@
           le foto che mi piacciono di più e alcuni momenti che voglio ricordare.
           È la mia piccola galleria personale dentro NEXO.
         </p>
+
+        <div class="photo-grid">
+
+          <!-- FOTO 1 -->
+          <div class="photo-card" data-photo="p1">
+            <div class="photo-thumb">
+              <img src="foto/viaggio1.jpg" alt="Viaggio 1">
+            </div>
+            <p class="photo-caption">
+              Foto 1 – descrizione del posto o del momento.
+            </p>
+
+            <div class="reactions photo-reactions">
+              <span class="photo-react" data-photo="p1" data-react="heart">
+                💙 <b class="photo-count" data-photo="p1" data-react="heart">0</b>
+              </span>
+              <span class="photo-react" data-photo="p1" data-react="star">
+                ⭐ <b class="photo-count" data-photo="p1" data-react="star">0</b>
+              </span>
+            </div>
+
+            <div class="comment-area">
+              <h4>Commenti</h4>
+              <p class="comment-note">
+                I commenti vengono salvati solo sul tuo dispositivo.
+              </p>
+
+              <textarea class="photo-comment-input" data-photo="p1" placeholder="Scrivi un commento sulla foto..."></textarea>
+              <button class="photo-add-comment" data-photo="p1">Aggiungi commento</button>
+
+              <ul class="photo-comment-list" data-photo="p1"></ul>
+            </div>
+          </div>
+
+          <!-- FOTO 2 -->
+          <div class="photo-card" data-photo="p2">
+            <div class="photo-thumb">
+              <img src="foto/viaggio2.jpg" alt="Viaggio 2">
+            </div>
+            <p class="photo-caption">
+              Foto 2 – un altro momento o panorama che ti piace.
+            </p>
+
+            <div class="reactions photo-reactions">
+              <span class="photo-react" data-photo="p2" data-react="heart">
+                💙 <b class="photo-count" data-photo="p2" data-react="heart">0</b>
+              </span>
+              <span class="photo-react" data-photo="p2" data-react="star">
+                ⭐ <b class="photo-count" data-photo="p2" data-react="star">0</b>
+              </span>
+            </div>
+
+            <div class="comment-area">
+              <h4>Commenti</h4>
+              <p class="comment-note">
+                I commenti vengono salvati solo sul tuo dispositivo.
+              </p>
+
+              <textarea class="photo-comment-input" data-photo="p2" placeholder="Scrivi un commento sulla foto..."></textarea>
+              <button class="photo-add-comment" data-photo="p2">Aggiungi commento</button>
+
+              <ul class="photo-comment-list" data-photo="p2"></ul>
+            </div>
+          </div>
+
+          <!-- FOTO 3 -->
+          <div class="photo-card" data-photo="p3">
+            <div class="photo-thumb">
+              <img src="foto/viaggio3.jpg" alt="Viaggio 3">
+            </div>
+            <p class="photo-caption">
+              Foto 3 – un ricordo particolare o un luogo speciale.
+            </p>
+
+            <div class="reactions photo-reactions">
+              <span class="photo-react" data-photo="p3" data-react="heart">
+                💙 <b class="photo-count" data-photo="p3" data-react="heart">0</b>
+              </span>
+              <span class="photo-react" data-photo="p3" data-react="star">
+                ⭐ <b class="photo-count" data-photo="p3" data-react="star">0</b>
+              </span>
+            </div>
+
+            <div class="comment-area">
+              <h4>Commenti</h4>
+              <p class="comment-note">
+                I commenti vengono salvati solo sul tuo dispositivo.
+              </p>
+
+              <textarea class="photo-comment-input" data-photo="p3" placeholder="Scrivi un commento sulla foto..."></textarea>
+              <button class="photo-add-comment" data-photo="p3">Aggiungi commento</button>
+
+              <ul class="photo-comment-list" data-photo="p3"></ul>
+            </div>
+          </div>
+
+          <!-- Se vuoi più foto, copia uno di questi blocchi e cambia p4, p5, ecc. -->
+
+        </div>
       </div>
     </section>
 
@@ -199,7 +298,7 @@
 
   </main>
 
-  <!-- SCRIPT: LIKE + COMMENTI PER OGNI VIDEO -->
+  <!-- SCRIPT: LIKE + COMMENTI PER VIDEO -->
   <script>
     (function () {
       const STORAGE_KEY = "nexo_video_data";
@@ -228,7 +327,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const store = loadStore();
 
-        // Inizializza like
+        // Inizializza like video
         document.querySelectorAll(".count").forEach(function (span) {
           const videoId = span.dataset.video;
           const reaction = span.dataset.react;
@@ -236,7 +335,7 @@
           span.textContent = store[videoId].likes[reaction] || 0;
         });
 
-        // Inizializza commenti
+        // Inizializza commenti video
         document.querySelectorAll(".comment-list").forEach(function (list) {
           const videoId = list.dataset.video;
           ensureVideo(store, videoId);
@@ -247,7 +346,7 @@
           });
         });
 
-        // Gestione click sui like
+        // Gestione click sui like video
         document.querySelectorAll(".react").forEach(function (btn) {
           btn.addEventListener("click", function () {
             const videoId = btn.dataset.video;
@@ -263,7 +362,7 @@
           });
         });
 
-        // Gestione commenti
+        // Gestione commenti video
         document.querySelectorAll(".add-comment").forEach(function (btn) {
           btn.addEventListener("click", function () {
             const videoId = btn.dataset.video;
@@ -276,6 +375,96 @@
 
             ensureVideo(store, videoId);
             store[videoId].comments.push(text);
+
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+
+            input.value = "";
+            saveStore(store);
+          });
+        });
+      });
+    })();
+  </script>
+
+  <!-- SCRIPT: LIKE + COMMENTI PER FOTO -->
+  <script>
+    (function () {
+      const PHOTO_KEY = "nexo_photo_data";
+
+      function loadStore() {
+        try {
+          return JSON.parse(localStorage.getItem(PHOTO_KEY) || "{}");
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveStore(store) {
+        localStorage.setItem(PHOTO_KEY, JSON.stringify(store));
+      }
+
+      function ensurePhoto(store, id) {
+        if (!store[id]) {
+          store[id] = {
+            likes: { heart: 0, star: 0 },
+            comments: []
+          };
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const store = loadStore();
+
+        // Inizializza like foto
+        document.querySelectorAll(".photo-count").forEach(function (span) {
+          const photoId = span.dataset.photo;
+          const reaction = span.dataset.react;
+          ensurePhoto(store, photoId);
+          span.textContent = store[photoId].likes[reaction] || 0;
+        });
+
+        // Inizializza commenti foto
+        document.querySelectorAll(".photo-comment-list").forEach(function (list) {
+          const photoId = list.dataset.photo;
+          ensurePhoto(store, photoId);
+          (store[photoId].comments || []).forEach(function (text) {
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+          });
+        });
+
+        // Gestione click sui like foto
+        document.querySelectorAll(".photo-react").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const photoId = btn.dataset.photo;
+            const reaction = btn.dataset.react;
+            ensurePhoto(store, photoId);
+            store[photoId].likes[reaction] = (store[photoId].likes[reaction] || 0) + 1;
+
+            const span = document.querySelector(
+              '.photo-count[data-photo="' + photoId + '"][data-react="' + reaction + '"]'
+            );
+            if (span) span.textContent = store[photoId].likes[reaction];
+            saveStore(store);
+          });
+        });
+
+        // Gestione commenti foto
+        document.querySelectorAll(".photo-add-comment").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const photoId = btn.dataset.photo;
+            const input = document.querySelector('.photo-comment-input[data-photo="' + photoId + '"]');
+            const list = document.querySelector('.photo-comment-list[data-photo="' + photoId + '"]');
+            if (!input || !list) return;
+
+            const text = (input.value || "").trim();
+            if (!text) return;
+
+            ensurePhoto(store, photoId);
+            store[photoId].comments.push(text);
 
             const li = document.createElement("li");
             li.textContent = text;
