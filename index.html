@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NEXO – Hub Personale</title>
+  <title>NEXO – Il mio spazio personale</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -21,84 +21,93 @@
       </div>
 
       <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="viaggi.html" class="nav-link">Viaggi & Foto</a>
-        <a href="video.html" class="nav-link">Video</a>
+        <a href="#top" class="nav-link active">Home</a>
+        <a href="#chi-sono" class="nav-link">Chi sono</a>
+        <a href="#contenuti" class="nav-link">Contenuti</a>
       </div>
     </nav>
   </header>
 
   <!-- MAIN -->
-  <main class="site-main">
+  <main class="site-main" id="top">
     <div class="container">
 
-      <!-- PANNELLO PRINCIPALE (come la vecchia home) -->
-      <section class="hero">
-        <div class="card panel-3d hero-main">
+      <!-- BENVENTUO SU NEXO -->
+      <section class="section">
+        <div class="card panel-3d">
           <div class="card-inner">
-            <div class="hero-kicker">
-              <span class="badge">NEXO · HUB PERSONALE</span>
-            </div>
-
-            <h1 class="hero-title">
-              Il mio spazio digitale dove tengo tutto insieme.
-            </h1>
-
-            <p class="hero-subtitle text-muted">
-              Appunti, viaggi, foto, video, test tecnici, idee per il futuro.
-              Tutto raccolto in un unico posto che posso aggiornare quando voglio.
+            <h1>Benvenuto su NEXO</h1>
+            <p class="text-muted">
+              Un luogo dove raccolgo quello che mi passa per la testa: pensieri, esperienze,
+              prove, video e tutto quello che ho voglia di fissare da qualche parte.
             </p>
-
-            <div class="hero-meta-row" style="margin-top:16px;">
-              <div class="hero-meta-item">
-                <div class="hero-meta-label">Stato</div>
-                <div class="hero-meta-value">Online · in aggiornamento</div>
-              </div>
-              <div class="hero-meta-item">
-                <div class="hero-meta-label">Contenuti</div>
-                <div class="hero-meta-value">Foto, video, appunti personali</div>
-              </div>
-              <div class="hero-meta-item">
-                <div class="hero-meta-label">Accesso</div>
-                <div class="hero-meta-value">Solo per me (o chi voglio)</div>
-              </div>
-            </div>
-
-            <div class="hero-actions" style="margin-top:20px;">
-              <a href="viaggi.html" class="btn btn-primary">Vai a Viaggi & Foto</a>
-              <a href="video.html" class="btn btn-ghost">Apri area Video</a>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- SEZIONE AREE PRINCIPALI CON GRANDI PANNELLI -->
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title">📁 Aree principali</h2>
-          <span class="section-subtitle">Scegli dove entrare</span>
+      <!-- CHI SONO -->
+      <section class="section" id="chi-sono">
+        <div class="card panel-3d">
+          <div class="card-inner">
+            <h2>Chi sono</h2>
+            <p class="text-muted">
+              Qui puoi raccontare chi sei, cosa fai, cosa ti appassiona (tecnologia, auto,
+              video, basket, ecc.). È la tua “carta d’identità” dentro NEXO.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div class="home-sections">
-          <!-- CARD VIAGGI & FOTO -->
-          <a href="viaggi.html" class="section-card-home">
-            <h3>📸 I miei viaggi e le mie foto</h3>
+      <!-- I MIEI CONTENUTI -->
+      <section class="section" id="contenuti">
+        <div class="card panel-3d">
+          <div class="card-inner">
+            <h2>I miei contenuti</h2>
             <p class="text-muted">
-              Raccolta dei posti in cui sono stato, dei momenti che vale la pena ricordare,
-              delle foto che mi rappresentano. Puoi sfogliare la galleria, mettere "mi piace"
-              e lasciare commenti sotto le immagini.
+              Qui posso inserire pensieri, appunti, link, idee, prove di testo, riflessioni,
+              magari collegati a video o esperienze.
             </p>
-          </a>
 
-          <!-- CARD VIDEO -->
-          <a href="video.html" class="section-card-home">
-            <h3>🎬 Video</h3>
-            <p class="text-muted">
-              Prove video, partite di basket, esperimenti tecnici, clip salvate da YouTube.
-              Ogni video può avere i suoi commenti e i suoi "mi piace", così tengo traccia
-              di quello che mi colpisce di più.
-            </p>
-          </a>
+            <!-- PRIMO CONTENUTO DI PROVA -->
+            <div class="card panel-3d" style="margin-top:18px;">
+              <div class="card-inner">
+                <h3>Primo contenuto di prova</h3>
+                <p class="text-muted">
+                  Questo è un esempio di contenuto. Qui potrai scrivere qualcosa che ti
+                  rappresenta, un pensiero della giornata, un commento su un video, un’idea
+                  che non vuoi dimenticare.
+                </p>
+
+                <!-- REAZIONI -->
+                <div class="reaction-row" style="margin-top:10px; margin-bottom:12px; display:flex; gap:8px;">
+                  <button class="btn-pill btn-ghost reaction-btn" data-reaction="fire">
+                    🔥 <span class="reaction-count" data-reaction="fire">0</span>
+                  </button>
+                  <button class="btn-pill btn-ghost reaction-btn" data-reaction="heart">
+                    💙 <span class="reaction-count" data-reaction="heart">0</span>
+                  </button>
+                  <button class="btn-pill btn-ghost reaction-btn" data-reaction="idea">
+                    💡 <span class="reaction-count" data-reaction="idea">0</span>
+                  </button>
+                </div>
+
+                <!-- COMMENTI -->
+                <h4 style="margin-top:6px;">Commenti (solo nel tuo browser)</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin-bottom:8px;">
+                  I commenti e i contatori vengono salvati solo sul tuo dispositivo.
+                  Nessuna email, nessun invio dati.
+                </p>
+
+                <div class="comment-box">
+                  <textarea id="comment-input" class="input-cyber" rows="3" placeholder="Scrivi un commento o una nota..."></textarea>
+                  <button id="add-comment" class="btn" style="margin-top:8px;">Aggiungi commento</button>
+
+                  <ul id="comment-list" class="comment-list" style="margin-top:10px; list-style:none; padding-left:0;"></ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -108,9 +117,85 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>© NEXO – spazio personale</span>
+      <span>© 2025 NEXO – spazio personale</span>
       <span>Versione di prova</span>
     </div>
   </footer>
+
+  <!-- SCRIPT PER LIKE + COMMENTI IN LOCALE -->
+  <script>
+    (function () {
+      const REACTIONS_KEY = "nexo_reactions";
+      const COMMENTS_KEY = "nexo_comments";
+
+      function loadReactions() {
+        try {
+          return JSON.parse(localStorage.getItem(REACTIONS_KEY) || "{}");
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveReactions(data) {
+        localStorage.setItem(REACTIONS_KEY, JSON.stringify(data));
+      }
+
+      function loadComments() {
+        try {
+          return JSON.parse(localStorage.getItem(COMMENTS_KEY) || "[]");
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveComments(list) {
+        localStorage.setItem(COMMENTS_KEY, JSON.stringify(list));
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Reazioni
+        const reactions = loadReactions();
+        document.querySelectorAll(".reaction-count").forEach(function (span) {
+          const key = span.getAttribute("data-reaction");
+          span.textContent = reactions[key] || 0;
+        });
+
+        document.querySelectorAll(".reaction-btn").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const key = btn.getAttribute("data-reaction");
+            reactions[key] = (reactions[key] || 0) + 1;
+            const span = document.querySelector('.reaction-count[data-reaction="' + key + '"]');
+            if (span) span.textContent = reactions[key];
+            saveReactions(reactions);
+          });
+        });
+
+        // Commenti
+        const commentInput = document.getElementById("comment-input");
+        const commentList = document.getElementById("comment-list");
+        const addCommentBtn = document.getElementById("add-comment");
+
+        const comments = loadComments();
+
+        // Mostra commenti esistenti
+        comments.forEach(function (text) {
+          const li = document.createElement("li");
+          li.textContent = text;
+          commentList.appendChild(li);
+        });
+
+        addCommentBtn.addEventListener("click", function () {
+          const text = (commentInput.value || "").trim();
+          if (!text) return;
+          const li = document.createElement("li");
+          li.textContent = text;
+          commentList.appendChild(li);
+          comments.push(text);
+          saveComments(comments);
+          commentInput.value = "";
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
