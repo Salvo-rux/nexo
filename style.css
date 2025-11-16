@@ -1,32 +1,28 @@
-/* ------------------------------
-   PALETTE CHIARA CYBER + 3D
------------------------------- */
+/* PALETTE BASE */
 :root {
   --text: #eaf7ff;
   --muted: #b5d0e4;
   --accent: #33d4ff;
   --accent-strong: #7ee9ff;
 
-  --panel: rgba(8, 32, 58, 0.85);
-  --panel-border: rgba(160, 220, 255, 0.65);
+  --panel: rgba(8, 32, 58, 0.88);
+  --panel-border: rgba(160, 220, 255, 0.7);
   --panel-glow: rgba(51, 212, 255, 0.35);
 }
 
-/* ------------------------------
-   RESET BASE
------------------------------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* SFONDO VIA LATTEA */
 body {
   font-family: "Montserrat", Arial, sans-serif;
 
-  /* SFONDO VIA LATTEA */
   background:
-    linear-gradient(rgba(0, 8, 16, 0.75), rgba(0, 8, 16, 0.75)),
+    linear-gradient(rgba(0, 8, 16, 0.35), rgba(0, 8, 16, 0.35)),
     url("milkyway.jpg");
   background-size: cover;
   background-position: center;
@@ -37,15 +33,13 @@ body {
   overflow-x: hidden;
 }
 
-/* ------------------------------
-   TOPBAR
------------------------------- */
+/* TOPBAR */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(16px);
-  background: rgba(0, 14, 28, 0.8);
+  background: rgba(0, 12, 24, 0.85);
   border-bottom: 1px solid rgba(180, 230, 255, 0.4);
   padding: 16px 26px;
 
@@ -74,18 +68,14 @@ body {
   text-shadow: 0 0 12px var(--accent);
 }
 
-/* ------------------------------
-   LAYOUT PRINCIPALE
------------------------------- */
+/* LAYOUT PRINCIPALE */
 main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px 16px 60px;
 }
 
-/* ------------------------------
-   SEZIONI 3D
------------------------------- */
+/* SEZIONI 3D */
 .section {
   margin-top: 26px;
   perspective: 1400px;
@@ -107,10 +97,10 @@ main {
 }
 
 .section:hover .section-inner {
-  transform: rotateX(2deg) translateY(0);
+  transform: rotateX(3deg) translateY(0);
   box-shadow:
     0 28px 75px rgba(0, 0, 0, 1),
-    0 0 45px var(--accent);
+    0 0 45px rgba(51, 212, 255, 0.6);
 }
 
 .section h2 {
@@ -124,15 +114,13 @@ main {
   color: var(--muted);
 }
 
-/* ------------------------------
-   HERO SPECIALE
------------------------------- */
+/* HERO */
 .hero .section-inner {
   padding: 40px 26px;
   background:
     linear-gradient(
-      rgba(20, 50, 80, 0.85),
-      rgba(10, 30, 50, 0.85)
+      rgba(20, 50, 80, 0.9),
+      rgba(10, 30, 50, 0.9)
     );
 }
 
@@ -153,16 +141,14 @@ main {
   max-width: 700px;
 }
 
-/* ------------------------------
-   BLOCCO CONTENUTO 3D
------------------------------- */
+/* BLOCCO CONTENUTO 3D */
 .post-box {
   margin-top: 26px;
   perspective: 1200px;
 }
 
 .post-inner {
-  background: rgba(10, 35, 60, 0.85);
+  background: rgba(10, 35, 60, 0.9);
   border: 1px solid var(--accent-strong);
   border-radius: 18px;
 
@@ -171,16 +157,16 @@ main {
   transform: rotateX(8deg) translateY(8px);
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.8),
-    0 0 26px rgba(51, 212, 255, 0.25);
+    0 0 26px rgba(51, 212, 255, 0.3);
 
   transition: 0.3s ease;
 }
 
 .post-box:hover .post-inner {
-  transform: rotateX(2deg) translateY(0);
+  transform: rotateX(3deg) translateY(0);
   box-shadow:
     0 22px 55px rgba(0, 0, 0, 1),
-    0 0 40px rgba(51, 212, 255, 0.45);
+    0 0 40px rgba(51, 212, 255, 0.5);
 }
 
 .post-inner h3 {
@@ -194,9 +180,7 @@ main {
   font-size: 1.05rem;
 }
 
-/* ------------------------------
-   REAZIONI (LIKE / LOVE)
------------------------------- */
+/* REAZIONI (LIKE / LOVE) */
 .reactions {
   margin-top: 14px;
   display: flex;
@@ -205,7 +189,7 @@ main {
 }
 
 .reactions span {
-  background: rgba(5, 20, 36, 0.8);
+  background: rgba(5, 20, 36, 0.85);
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--accent);
@@ -225,9 +209,7 @@ main {
     0 0 18px rgba(51, 212, 255, 0.7);
 }
 
-/* ------------------------------
-   COMMENTI
------------------------------- */
+/* COMMENTI */
 .comment-area {
   margin-top: 18px;
 }
@@ -250,7 +232,7 @@ main {
   border-radius: 12px;
 
   border: 1px solid var(--accent);
-  background: rgba(0, 20, 36, 0.8);
+  background: rgba(0, 20, 36, 0.85);
 
   color: var(--text);
   font-size: 1rem;
@@ -295,9 +277,7 @@ main {
   font-size: 1rem;
 }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
+/* FOOTER */
 .footer {
   margin-top: 40px;
   text-align: center;
