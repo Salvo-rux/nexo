@@ -21,46 +21,67 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO 3D -->
     <section id="home" class="section hero">
-      <h1>Benvenuto su NEXO</h1>
-      <p>
-        Questo è il mio spazio personale dove condivido idee, pensieri, video, esperienze e tutto ciò che mi interessa.
-      </p>
+      <div class="section-inner">
+        <p class="tagline">SPAZIO PERSONALE • IDEE • VIDEO • PENSIERI</p>
+        <h1>Benvenuto su NEXO</h1>
+        <p class="hero-text">
+          Un luogo dove raccolgo quello che mi passa per la testa: pensieri, esperienze, prove, video
+          e tutto quello che ho voglia di fissare da qualche parte.
+        </p>
+      </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- SEZIONE CHI SONO -->
     <section id="about" class="section">
-      <h2>Chi sono</h2>
-      <p>
-        Qui puoi raccontare chi sei, cosa fai e quali sono i tuoi interessi.
-      </p>
+      <div class="section-inner">
+        <h2>Chi sono</h2>
+        <p>
+          Qui puoi raccontare chi sei, cosa fai, cosa ti appassiona (tecnologia, auto, video,
+          basket, ecc.). È la tua “carta d’identità” dentro NEXO.
+        </p>
+      </div>
     </section>
 
-    <!-- CONTENT -->
+    <!-- SEZIONE CONTENUTI INTERATTIVI -->
     <section id="content" class="section">
-      <h2>Contenuti</h2>
-      <p>Qui inserirò video, riflessioni, progetti, pensieri e altro.</p>
+      <div class="section-inner">
+        <h2>I miei contenuti</h2>
+        <p>
+          Qui posso inserire pensieri, appunti, link, idee, prove di testo, riflessioni,
+          magari collegati a video o esperienze.
+        </p>
 
-      <!-- BLOCCO CONTENUTO INTERATTIVO -->
-      <div class="post-box">
-        <h3>Primo contenuto di prova</h3>
-        <p>Questo è un esempio di contenuto dove puoi provare i commenti e i “mi piace”.</p>
+        <!-- PRIMO BLOCCO CONTENUTO INTERATTIVO -->
+        <div class="post-box">
+          <div class="post-inner">
+            <h3>Primo contenuto di prova</h3>
+            <p>
+              Questo è un esempio di contenuto. Qui potrai scrivere qualcosa che ti rappresenta,
+              un pensiero della giornata, un commento su un video, un’idea che non vuoi dimenticare.
+            </p>
 
-        <!-- ICONE REAZIONI -->
-        <div class="reactions">
-          <span class="like-btn">👍 <span id="like-count">0</span></span>
-          <span class="love-btn">❤️ <span id="love-count">0</span></span>
+            <!-- REAZIONI -->
+            <div class="reactions">
+              <span class="like-btn">👍 <span id="like-count">0</span></span>
+              <span class="love-btn">💙 <span id="love-count">0</span></span>
+            </div>
+
+            <!-- COMMENTI -->
+            <div class="comment-area">
+              <h4>Commenti (solo nel tuo browser)</h4>
+              <p class="comment-note">
+                I commenti e i contatori vengono salvati solo sul tuo dispositivo. Nessuna email, nessun invio dati.
+              </p>
+              <textarea id="comment-input" placeholder="Scrivi un commento o una nota..."></textarea>
+              <button id="add-comment">Aggiungi commento</button>
+
+              <ul id="comment-list"></ul>
+            </div>
+          </div>
         </div>
 
-        <!-- COMMENTI -->
-        <div class="comment-area">
-          <h4>Commenti</h4>
-          <textarea id="comment-input" placeholder="Scrivi un commento..."></textarea>
-          <button id="add-comment">Aggiungi commento</button>
-
-          <ul id="comment-list"></ul>
-        </div>
       </div>
     </section>
 
@@ -70,53 +91,54 @@
     <p>© <span id="year"></span> NEXO</p>
   </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  <script>
+    // Anno footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // LIKE
-  let likeCount = localStorage.getItem("nexo_likes") || 0;
-  document.getElementById("like-count").textContent = likeCount;
-
-  document.querySelector(".like-btn").onclick = () => {
-    likeCount++;
+    // LIKE
+    let likeCount = localStorage.getItem("nexo_likes") || 0;
     document.getElementById("like-count").textContent = likeCount;
-    localStorage.setItem("nexo_likes", likeCount);
-  };
 
-  // LOVE
-  let loveCount = localStorage.getItem("nexo_loves") || 0;
-  document.getElementById("love-count").textContent = loveCount;
+    document.querySelector(".like-btn").onclick = () => {
+      likeCount++;
+      document.getElementById("like-count").textContent = likeCount;
+      localStorage.setItem("nexo_likes", likeCount);
+    };
 
-  document.querySelector(".love-btn").onclick = () => {
-    loveCount++;
+    // LOVE
+    let loveCount = localStorage.getItem("nexo_loves") || 0;
     document.getElementById("love-count").textContent = loveCount;
-    localStorage.setItem("nexo_loves", loveCount);
-  };
 
-  // COMMENTI
-  const commentList = document.getElementById("comment-list");
-  const savedComments = JSON.parse(localStorage.getItem("nexo_comments") || "[]");
+    document.querySelector(".love-btn").onclick = () => {
+      loveCount++;
+      document.getElementById("love-count").textContent = loveCount;
+      localStorage.setItem("nexo_loves", loveCount);
+    };
 
-  savedComments.forEach(c => {
-    let li = document.createElement("li");
-    li.textContent = c;
-    commentList.appendChild(li);
-  });
+    // COMMENTI
+    const commentList = document.getElementById("comment-list");
+    const savedComments = JSON.parse(localStorage.getItem("nexo_comments") || "[]");
 
-  document.getElementById("add-comment").onclick = () => {
-    const text = document.getElementById("comment-input").value;
-    if (text.trim() === "") return;
+    savedComments.forEach(c => {
+      let li = document.createElement("li");
+      li.textContent = c;
+      commentList.appendChild(li);
+    });
 
-    let li = document.createElement("li");
-    li.textContent = text;
-    commentList.appendChild(li);
+    document.getElementById("add-comment").onclick = () => {
+      const text = document.getElementById("comment-input").value;
+      if (text.trim() === "") return;
 
-    savedComments.push(text);
-    localStorage.setItem("nexo_comments", JSON.stringify(savedComments));
+      let li = document.createElement("li");
+      li.textContent = text;
+      commentList.appendChild(li);
 
-    document.getElementById("comment-input").value = "";
-  };
-</script>
+      savedComments.push(text);
+      localStorage.setItem("nexo_comments", JSON.stringify(savedComments));
+
+      document.getElementById("comment-input").value = "";
+    };
+  </script>
 
 </body>
 </html>
