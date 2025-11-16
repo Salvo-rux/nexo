@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXO – Il mio spazio personale</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="logo">NEXO</div>
+    <nav class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">Chi sono</a>
+      <a href="#content">Contenuti</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <h1>Benvenuto su NEXO</h1>
+      <p>
+        Questo è il mio spazio personale dove condivido idee, pensieri, video, esperienze e tutto ciò che mi interessa.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>Chi sono</h2>
+      <p>
+        Qui puoi raccontare chi sei, cosa fai e quali sono i tuoi interessi.
+      </p>
+    </section>
+
+    <!-- CONTENT -->
+    <section id="content" class="section">
+      <h2>Contenuti</h2>
+      <p>
+        Qui inserirò video, riflessioni, progetti, pensieri e tutto ciò che voglio condividere.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contatti</h2>
+      <p>Email: <a href="mailto:tuaemail@example.com">tuaemail@example.com</a></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> NEXO</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
