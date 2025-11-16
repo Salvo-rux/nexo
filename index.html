@@ -16,7 +16,6 @@
       <a href="#home">Home</a>
       <a href="#about">Chi sono</a>
       <a href="#content">Contenuti</a>
-      <a href="#contact">Contatti</a>
     </nav>
   </header>
 
@@ -41,15 +40,28 @@
     <!-- CONTENT -->
     <section id="content" class="section">
       <h2>Contenuti</h2>
-      <p>
-        Qui inserirò video, riflessioni, progetti, pensieri e tutto ciò che voglio condividere.
-      </p>
-    </section>
+      <p>Qui inserirò video, riflessioni, progetti, pensieri e altro.</p>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Contatti</h2>
-      <p>Email: <a href="mailto:tuaemail@example.com">tuaemail@example.com</a></p>
+      <!-- BLOCCO CONTENUTO INTERATTIVO -->
+      <div class="post-box">
+        <h3>Primo contenuto di prova</h3>
+        <p>Questo è un esempio di contenuto dove puoi provare i commenti e i “mi piace”.</p>
+
+        <!-- ICONE REAZIONI -->
+        <div class="reactions">
+          <span class="like-btn">👍 <span id="like-count">0</span></span>
+          <span class="love-btn">❤️ <span id="love-count">0</span></span>
+        </div>
+
+        <!-- COMMENTI -->
+        <div class="comment-area">
+          <h4>Commenti</h4>
+          <textarea id="comment-input" placeholder="Scrivi un commento..."></textarea>
+          <button id="add-comment">Aggiungi commento</button>
+
+          <ul id="comment-list"></ul>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -58,9 +70,53 @@
     <p>© <span id="year"></span> NEXO</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // LIKE
+  let likeCount = localStorage.getItem("nexo_likes") || 0;
+  document.getElementById("like-count").textContent = likeCount;
+
+  document.querySelector(".like-btn").onclick = () => {
+    likeCount++;
+    document.getElementById("like-count").textContent = likeCount;
+    localStorage.setItem("nexo_likes", likeCount);
+  };
+
+  // LOVE
+  let loveCount = localStorage.getItem("nexo_loves") || 0;
+  document.getElementById("love-count").textContent = loveCount;
+
+  document.querySelector(".love-btn").onclick = () => {
+    loveCount++;
+    document.getElementById("love-count").textContent = loveCount;
+    localStorage.setItem("nexo_loves", loveCount);
+  };
+
+  // COMMENTI
+  const commentList = document.getElementById("comment-list");
+  const savedComments = JSON.parse(localStorage.getItem("nexo_comments") || "[]");
+
+  savedComments.forEach(c => {
+    let li = document.createElement("li");
+    li.textContent = c;
+    commentList.appendChild(li);
+  });
+
+  document.getElementById("add-comment").onclick = () => {
+    const text = document.getElementById("comment-input").value;
+    if (text.trim() === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = text;
+    commentList.appendChild(li);
+
+    savedComments.push(text);
+    localStorage.setItem("nexo_comments", JSON.stringify(savedComments));
+
+    document.getElementById("comment-input").value = "";
+  };
+</script>
 
 </body>
 </html>
