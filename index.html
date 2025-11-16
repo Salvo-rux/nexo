@@ -1,144 +1,129 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NEXO – Il mio spazio personale</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NEXO – Hub Personale</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+<body class="page">
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="brand">
+        <div class="brand-logo">NX</div>
+        <div class="brand-text">
+          <span class="brand-title">NEXO</span>
+          <span class="brand-subtitle">Spazio personale digitale</span>
+        </div>
+      </div>
 
-<body>
-  <header class="topbar">
-    <div class="logo">NEXO</div>
-    <nav class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">Chi sono</a>
-      <a href="#content">Contenuti</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="viaggi.html" class="nav-link">Viaggi & Foto</a>
+        <a href="video.html" class="nav-link">Video</a>
+      </div>
     </nav>
   </header>
 
-  <main>
+  <!-- MAIN -->
+  <main class="site-main">
+    <div class="container">
 
-    <!-- HERO 3D -->
-    <section id="home" class="section hero">
-      <div class="section-inner">
-        <p class="tagline">SPAZIO PERSONALE • IDEE • VIDEO • PENSIERI</p>
-        <h1>Benvenuto su NEXO</h1>
-        <p class="hero-text">
-          Un luogo dove raccolgo quello che mi passa per la testa: pensieri, esperienze, prove, video
-          e tutto quello che ho voglia di fissare da qualche parte.
-        </p>
-      </div>
-    </section>
-
-    <!-- SEZIONE CHI SONO -->
-    <section id="about" class="section">
-      <div class="section-inner">
-        <h2>Chi sono</h2>
-        <p>
-          Qui puoi raccontare chi sei, cosa fai, cosa ti appassiona (tecnologia, auto, video,
-          basket, ecc.). È la tua “carta d’identità” dentro NEXO.
-        </p>
-      </div>
-    </section>
-
-    <!-- SEZIONE CONTENUTI INTERATTIVI -->
-    <section id="content" class="section">
-      <div class="section-inner">
-        <h2>I miei contenuti</h2>
-        <p>
-          Qui posso inserire pensieri, appunti, link, idee, prove di testo, riflessioni,
-          magari collegati a video o esperienze.
-        </p>
-
-        <!-- PRIMO BLOCCO CONTENUTO INTERATTIVO -->
-        <div class="post-box">
-          <div class="post-inner">
-            <h3>Primo contenuto di prova</h3>
-            <p>
-              Questo è un esempio di contenuto. Qui potrai scrivere qualcosa che ti rappresenta,
-              un pensiero della giornata, un commento su un video, un’idea che non vuoi dimenticare.
+      <!-- HERO -->
+      <section class="hero">
+        <div class="panel-3d hero-layout">
+          <div class="hero-left">
+            <div class="hero-kicker">
+              <span class="badge">NEXO · HUB PERSONALE</span>
+            </div>
+            <h1 class="hero-title">
+              Il mio spazio <span>digitale</span> dove tengo tutto insieme.
+            </h1>
+            <p class="hero-subtitle text-muted">
+              Appunti, viaggi, foto, video, test tecnici, idee per il futuro.
+              Tutto raccolto in un unico posto che posso aggiornare quando voglio.
             </p>
 
-            <!-- REAZIONI -->
-            <div class="reactions">
-              <span class="like-btn">👍 <span id="like-count">0</span></span>
-              <span class="love-btn">💙 <span id="love-count">0</span></span>
+            <div class="hero-actions">
+              <a href="viaggi.html" class="btn btn-primary">Vai a Viaggi & Foto</a>
+              <a href="video.html" class="btn btn-ghost">Apri area Video</a>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-meta-row">
+              <div class="hero-meta-item">
+                <div class="hero-meta-label">Stato</div>
+                <div class="hero-meta-value">Online · in aggiornamento</div>
+              </div>
+              <div class="hero-meta-item">
+                <div class="hero-meta-label">Contenuti</div>
+                <div class="hero-meta-value">Foto, video, appunti personali</div>
+              </div>
             </div>
 
-            <!-- COMMENTI -->
-            <div class="comment-area">
-              <h4>Commenti (solo nel tuo browser)</h4>
-              <p class="comment-note">
-                I commenti e i contatori vengono salvati solo sul tuo dispositivo. Nessuna email, nessun invio dati.
-              </p>
-              <textarea id="comment-input" placeholder="Scrivi un commento o una nota..."></textarea>
-              <button id="add-comment">Aggiungi commento</button>
-
-              <ul id="comment-list"></ul>
+            <div class="hero-meta-row">
+              <div class="hero-meta-item">
+                <div class="hero-meta-label">Uso</div>
+                <div class="hero-meta-value">Test, progetti, idee, viaggi</div>
+              </div>
+              <div class="hero-meta-item">
+                <div class="hero-meta-label">Accesso</div>
+                <div class="hero-meta-value">Solo per me (o chi voglio)</div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- SEZIONI PRINCIPALI -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">📁 Aree principali</h2>
+          <span class="section-subtitle">Scegli dove entrare</span>
+        </div>
 
+        <div class="grid-2">
+          <!-- CARD VIAGGI & FOTO -->
+          <a href="viaggi.html" class="card panel-3d" style="text-decoration:none;">
+            <div class="card-inner">
+              <h3>📸 I miei viaggi e le mie foto</h3>
+              <p class="text-muted">
+                Raccolta dei posti in cui sono stato, dei momenti che vale la pena ricordare,
+                delle foto che mi rappresentano. Puoi sfogliare la galleria, mettere "mi piace"
+                e lasciare commenti sotto le immagini.
+              </p>
+            </div>
+          </a>
+
+          <!-- CARD VIDEO -->
+          <a href="video.html" class="card panel-3d" style="text-decoration:none;">
+            <div class="card-inner">
+              <h3>🎬 Video</h3>
+              <p class="text-muted">
+                Prove video, partite di basket, esperimenti tecnici, clip salvate da YouTube.
+                Ogni video può avere i suoi commenti e i suoi "mi piace", così tengo traccia
+                di cosa mi colpisce di più.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> NEXO</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© NEXO – spazio personale</span>
+      <div class="footer-links">
+        <span>Versione di prova</span>
+      </div>
+    </div>
   </footer>
-
-  <script>
-    // Anno footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // LIKE
-    let likeCount = localStorage.getItem("nexo_likes") || 0;
-    document.getElementById("like-count").textContent = likeCount;
-
-    document.querySelector(".like-btn").onclick = () => {
-      likeCount++;
-      document.getElementById("like-count").textContent = likeCount;
-      localStorage.setItem("nexo_likes", likeCount);
-    };
-
-    // LOVE
-    let loveCount = localStorage.getItem("nexo_loves") || 0;
-    document.getElementById("love-count").textContent = loveCount;
-
-    document.querySelector(".love-btn").onclick = () => {
-      loveCount++;
-      document.getElementById("love-count").textContent = loveCount;
-      localStorage.setItem("nexo_loves", loveCount);
-    };
-
-    // COMMENTI
-    const commentList = document.getElementById("comment-list");
-    const savedComments = JSON.parse(localStorage.getItem("nexo_comments") || "[]");
-
-    savedComments.forEach(c => {
-      let li = document.createElement("li");
-      li.textContent = c;
-      commentList.appendChild(li);
-    });
-
-    document.getElementById("add-comment").onclick = () => {
-      const text = document.getElementById("comment-input").value;
-      if (text.trim() === "") return;
-
-      let li = document.createElement("li");
-      li.textContent = text;
-      commentList.appendChild(li);
-
-      savedComments.push(text);
-      localStorage.setItem("nexo_comments", JSON.stringify(savedComments));
-
-      document.getElementById("comment-input").value = "";
-    };
-  </script>
-
 </body>
 </html>
