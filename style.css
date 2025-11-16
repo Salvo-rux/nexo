@@ -141,7 +141,7 @@ main {
   max-width: 700px;
 }
 
-/* BLOCCO CONTENUTO 3D */
+/* BLOCCO CONTENUTO 3D (VIDEO) */
 .post-box {
   margin-top: 26px;
   perspective: 1200px;
@@ -180,7 +180,7 @@ main {
   font-size: 1.05rem;
 }
 
-/* REAZIONI (LIKE / LOVE) */
+/* REAZIONI (LIKE / LOVE) VIDEO + FOTO */
 .reactions {
   margin-top: 14px;
   display: flex;
@@ -209,7 +209,7 @@ main {
     0 0 18px rgba(51, 212, 255, 0.7);
 }
 
-/* COMMENTI */
+/* COMMENTI GENERICI */
 .comment-area {
   margin-top: 18px;
 }
@@ -266,12 +266,14 @@ main {
   box-shadow: 0 18px 38px rgba(0, 45, 70, 1);
 }
 
-#comment-list {
+.comment-list,
+.photo-comment-list {
   margin-top: 12px;
   padding-left: 20px;
 }
 
-#comment-list li {
+.comment-list li,
+.photo-comment-list li {
   margin-bottom: 5px;
   color: var(--muted);
   font-size: 1rem;
@@ -284,6 +286,7 @@ main {
   color: var(--muted);
   font-size: 0.9rem;
 }
+
 /* VIDEO RESPONSIVE */
 .video-wrapper {
   position: relative;
@@ -304,4 +307,59 @@ main {
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* GALLERIA FOTO */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.photo-card {
+  flex: 1 1 260px;
+  background: rgba(8, 32, 58, 0.95);
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  padding: 14px 14px 16px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.9),
+    0 0 26px rgba(51, 212, 255, 0.4);
+}
+
+.photo-thumb {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(160, 220, 255, 0.7);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.9);
+  margin-bottom: 10px;
+}
+
+.photo-thumb img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.photo-caption {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.photo-reactions {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text {
+    font-size: 1.05rem;
+  }
 }
