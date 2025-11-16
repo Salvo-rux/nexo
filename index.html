@@ -15,8 +15,8 @@
   <header class="topbar">
     <div class="logo">NEXO</div>
     <nav class="menu">
-      <a href="#chi">Chi sono</a>
-      <a href="#contenuti">Contenuti</a>
+      <a href="#chi">Viaggi & foto</a>
+      <a href="#contenuti">Video</a>
     </nav>
   </header>
 
@@ -34,56 +34,158 @@
       </div>
     </section>
 
-    <!-- CHI SONO -->
+    <!-- I MIEI VIAGGI E LE MIE FOTO -->
     <section class="section" id="chi">
-  <div class="section-inner">
-    <h2>I miei viaggi e le mie foto</h2>
-    <p>
-      Qui raccolgo i posti in cui sono stato, le strade che mi sono rimaste in testa,
-      le foto che mi piacciono di più e alcuni momenti che voglio ricordare.
-      È la mia piccola galleria personale dentro NEXO.
-    </p>
-  </div>
-</section>
+      <div class="section-inner">
+        <h2>I miei viaggi e le mie foto</h2>
+        <p>
+          Qui raccolgo i posti in cui sono stato, le strade che mi sono rimaste in testa,
+          le foto che mi piacciono di più e alcuni momenti che voglio ricordare.
+          È la mia piccola galleria personale dentro NEXO.
+        </p>
+      </div>
+    </section>
 
-
-    <!-- CONTENUTI -->
+    <!-- VIDEO -->
     <section class="section" id="contenuti">
-  <div class="section-inner">
-    <h2>Video</h2>
-    <p>
-      Qui raccolgo i miei video: prove, esperimenti, clip che voglio tenere
-      a portata di mano e rivedere quando mi va.
-    </p>
+      <div class="section-inner">
+        <h2>Video</h2>
+        <p>
+          Qui raccolgo i miei video: Formula 1, crociere, simulatori di volo e tutto quello
+          che mi va di rivedere quando voglio.
+        </p>
 
-
-        <!-- BLOCCO POST -->
+        <!-- VIDEO 1 – FORMULA 1 IMOLA -->
         <div class="post-box">
           <div class="post-inner">
-            <h3>Primo contenuto di prova</h3>
+            <h3>Formula 1 – Imola</h3>
             <p>
-              Questo è un esempio di contenuto. Qui potrai scrivere qualcosa che ti rappresenta,
-              un pensiero della giornata, un commento su un video, un’idea che non vuoi dimenticare.
+              Video dedicato alla Formula 1 a Imola. Rumore dei motori, atmosfera e qualche
+              inquadratura che mi piace rivedere ogni tanto.
             </p>
 
-            <!-- REAZIONI -->
-            <div class="reactions">
-              <span class="react" data-react="fire">🔥 <b class="count" data-react="fire">0</b></span>
-              <span class="react" data-react="heart">💙 <b class="count" data-react="heart">0</b></span>
-              <span class="react" data-react="idea">💡 <b class="count" data-react="idea">0</b></span>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/Xl7S2kKIKPM"
+                title="Formula 1 Imola"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
 
-            <!-- COMMENTI -->
+            <div class="reactions" style="margin-top:16px;">
+              <span class="react" data-video="v1" data-react="fire">
+                🔥 <b class="count" data-video="v1" data-react="fire">0</b>
+              </span>
+              <span class="react" data-video="v1" data-react="heart">
+                💙 <b class="count" data-video="v1" data-react="heart">0</b>
+              </span>
+              <span class="react" data-video="v1" data-react="idea">
+                💡 <b class="count" data-video="v1" data-react="idea">0</b>
+              </span>
+            </div>
+
             <div class="comment-area">
               <h4>Commenti (solo nel tuo browser)</h4>
               <p class="comment-note">
                 I commenti vengono salvati solo sul tuo dispositivo. Nessun invio dati, nessun account richiesto.
               </p>
 
-              <textarea id="comment-input" placeholder="Scrivi un commento o una nota..."></textarea>
-              <button id="add-comment">Aggiungi commento</button>
+              <textarea class="comment-input" data-video="v1" placeholder="Scrivi un commento o una nota sul video..."></textarea>
+              <button class="add-comment" data-video="v1">Aggiungi commento</button>
 
-              <ul id="comment-list"></ul>
+              <ul class="comment-list" data-video="v1"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 – CROCIERA -->
+        <div class="post-box">
+          <div class="post-inner">
+            <h3>Crociera – Momenti a bordo</h3>
+            <p>
+              Un po’ di immagini dalla crociera: nave, mare, panorami e momenti rilassanti
+              che vale la pena tenere qui dentro NEXO.
+            </p>
+
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/SwPbBWkm-Q4"
+                title="Video crociera"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="reactions" style="margin-top:16px;">
+              <span class="react" data-video="v2" data-react="fire">
+                🔥 <b class="count" data-video="v2" data-react="fire">0</b>
+              </span>
+              <span class="react" data-video="v2" data-react="heart">
+                💙 <b class="count" data-video="v2" data-react="heart">0</b>
+              </span>
+              <span class="react" data-video="v2" data-react="idea">
+                💡 <b class="count" data-video="v2" data-react="idea">0</b>
+              </span>
+            </div>
+
+            <div class="comment-area">
+              <h4>Commenti (solo nel tuo browser)</h4>
+              <p class="comment-note">
+                I commenti vengono salvati solo sul tuo dispositivo. Nessun invio dati, nessun account richiesto.
+              </p>
+
+              <textarea class="comment-input" data-video="v2" placeholder="Scrivi un commento o una nota sul video..."></textarea>
+              <button class="add-comment" data-video="v2">Aggiungi commento</button>
+
+              <ul class="comment-list" data-video="v2"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO 3 – FLIGHT SIMULATOR PALERMO -->
+        <div class="post-box">
+          <div class="post-inner">
+            <h3>Flight Simulator – Atterraggio a Palermo</h3>
+            <p>
+              Atterraggio all’aeroporto di Palermo in Flight Simulator. Perfetto per rivedere
+              traiettoria, luci della pista e godersi l’avvicinamento.
+            </p>
+
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/OZW5abfD-uY"
+                title="Flight Simulator Palermo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="reactions" style="margin-top:16px;">
+              <span class="react" data-video="v3" data-react="fire">
+                🔥 <b class="count" data-video="v3" data-react="fire">0</b>
+              </span>
+              <span class="react" data-video="v3" data-react="heart">
+                💙 <b class="count" data-video="v3" data-react="heart">0</b>
+              </span>
+              <span class="react" data-video="v3" data-react="idea">
+                💡 <b class="count" data-video="v3" data-react="idea">0</b>
+              </span>
+            </div>
+
+            <div class="comment-area">
+              <h4>Commenti (solo nel tuo browser)</h4>
+              <p class="comment-note">
+                I commenti vengono salvati solo sul tuo dispositivo. Nessun invio dati, nessun account richiesto.
+              </p>
+
+              <textarea class="comment-input" data-video="v3" placeholder="Scrivi un commento o una nota sul video..."></textarea>
+              <button class="add-comment" data-video="v3">Aggiungi commento</button>
+
+              <ul class="comment-list" data-video="v3"></ul>
             </div>
           </div>
         </div>
@@ -97,51 +199,94 @@
 
   </main>
 
-  <!-- SCRIPT -->
+  <!-- SCRIPT: LIKE + COMMENTI PER OGNI VIDEO -->
   <script>
-    // Reazioni
-    const reactButtons = document.querySelectorAll('.react');
-    const reactCounts = JSON.parse(localStorage.getItem('nexo_react') || '{}');
+    (function () {
+      const STORAGE_KEY = "nexo_video_data";
 
-    reactButtons.forEach(btn => {
-      const key = btn.dataset.react;
-      const countElem = document.querySelector('.count[data-react="' + key + '"]');
-
-      countElem.textContent = reactCounts[key] || 0;
-
-      btn.addEventListener('click', () => {
-        reactCounts[key] = (reactCounts[key] || 0) + 1;
-        countElem.textContent = reactCounts[key];
-        localStorage.setItem('nexo_react', JSON.stringify(reactCounts));
-      });
-    });
-
-    // Commenti
-    const commentInput = document.getElementById('comment-input');
-    const commentList = document.getElementById('comment-list');
-    const addComment = document.getElementById('add-comment');
-
-    let comments = JSON.parse(localStorage.getItem('nexo_comments') || "[]");
-
-    comments.forEach(c => {
-      const li = document.createElement('li');
-      li.textContent = c;
-      commentList.appendChild(li);
-    });
-
-    addComment.addEventListener('click', () => {
-      if (commentInput.value.trim() !== "") {
-        const text = commentInput.value.trim();
-        const li = document.createElement('li');
-        li.textContent = text;
-        commentList.appendChild(li);
-
-        comments.push(text);
-        localStorage.setItem('nexo_comments', JSON.stringify(comments));
-
-        commentInput.value = "";
+      function loadStore() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        } catch (e) {
+          return {};
+        }
       }
-    });
+
+      function saveStore(store) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+      }
+
+      function ensureVideo(store, id) {
+        if (!store[id]) {
+          store[id] = {
+            likes: { fire: 0, heart: 0, idea: 0 },
+            comments: []
+          };
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const store = loadStore();
+
+        // Inizializza like
+        document.querySelectorAll(".count").forEach(function (span) {
+          const videoId = span.dataset.video;
+          const reaction = span.dataset.react;
+          ensureVideo(store, videoId);
+          span.textContent = store[videoId].likes[reaction] || 0;
+        });
+
+        // Inizializza commenti
+        document.querySelectorAll(".comment-list").forEach(function (list) {
+          const videoId = list.dataset.video;
+          ensureVideo(store, videoId);
+          (store[videoId].comments || []).forEach(function (text) {
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+          });
+        });
+
+        // Gestione click sui like
+        document.querySelectorAll(".react").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const videoId = btn.dataset.video;
+            const reaction = btn.dataset.react;
+            ensureVideo(store, videoId);
+            store[videoId].likes[reaction] = (store[videoId].likes[reaction] || 0) + 1;
+
+            const span = document.querySelector(
+              '.count[data-video="' + videoId + '"][data-react="' + reaction + '"]'
+            );
+            if (span) span.textContent = store[videoId].likes[reaction];
+            saveStore(store);
+          });
+        });
+
+        // Gestione commenti
+        document.querySelectorAll(".add-comment").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const videoId = btn.dataset.video;
+            const input = document.querySelector('.comment-input[data-video="' + videoId + '"]');
+            const list = document.querySelector('.comment-list[data-video="' + videoId + '"]');
+            if (!input || !list) return;
+
+            const text = (input.value || "").trim();
+            if (!text) return;
+
+            ensureVideo(store, videoId);
+            store[videoId].comments.push(text);
+
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+
+            input.value = "";
+            saveStore(store);
+          });
+        });
+      });
+    })();
   </script>
 
 </body>
