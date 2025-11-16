@@ -32,29 +32,24 @@
   <main class="site-main">
     <div class="container">
 
-      <!-- HERO -->
+      <!-- PANNELLO PRINCIPALE (come la vecchia home) -->
       <section class="hero">
-        <div class="panel-3d hero-layout">
-          <div class="hero-left">
+        <div class="card panel-3d hero-main">
+          <div class="card-inner">
             <div class="hero-kicker">
               <span class="badge">NEXO · HUB PERSONALE</span>
             </div>
+
             <h1 class="hero-title">
-              Il mio spazio <span>digitale</span> dove tengo tutto insieme.
+              Il mio spazio digitale dove tengo tutto insieme.
             </h1>
+
             <p class="hero-subtitle text-muted">
               Appunti, viaggi, foto, video, test tecnici, idee per il futuro.
               Tutto raccolto in un unico posto che posso aggiornare quando voglio.
             </p>
 
-            <div class="hero-actions">
-              <a href="viaggi.html" class="btn btn-primary">Vai a Viaggi & Foto</a>
-              <a href="video.html" class="btn btn-ghost">Apri area Video</a>
-            </div>
-          </div>
-
-          <div class="hero-right">
-            <div class="hero-meta-row">
+            <div class="hero-meta-row" style="margin-top:16px;">
               <div class="hero-meta-item">
                 <div class="hero-meta-label">Stato</div>
                 <div class="hero-meta-value">Online · in aggiornamento</div>
@@ -63,52 +58,46 @@
                 <div class="hero-meta-label">Contenuti</div>
                 <div class="hero-meta-value">Foto, video, appunti personali</div>
               </div>
-            </div>
-
-            <div class="hero-meta-row">
-              <div class="hero-meta-item">
-                <div class="hero-meta-label">Uso</div>
-                <div class="hero-meta-value">Test, progetti, idee, viaggi</div>
-              </div>
               <div class="hero-meta-item">
                 <div class="hero-meta-label">Accesso</div>
                 <div class="hero-meta-value">Solo per me (o chi voglio)</div>
               </div>
             </div>
+
+            <div class="hero-actions" style="margin-top:20px;">
+              <a href="viaggi.html" class="btn btn-primary">Vai a Viaggi & Foto</a>
+              <a href="video.html" class="btn btn-ghost">Apri area Video</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- SEZIONI PRINCIPALI -->
+      <!-- SEZIONE AREE PRINCIPALI CON GRANDI PANNELLI -->
       <section class="section">
         <div class="section-header">
           <h2 class="section-title">📁 Aree principali</h2>
           <span class="section-subtitle">Scegli dove entrare</span>
         </div>
 
-        <div class="grid-2">
+        <div class="home-sections">
           <!-- CARD VIAGGI & FOTO -->
-          <a href="viaggi.html" class="card panel-3d" style="text-decoration:none;">
-            <div class="card-inner">
-              <h3>📸 I miei viaggi e le mie foto</h3>
-              <p class="text-muted">
-                Raccolta dei posti in cui sono stato, dei momenti che vale la pena ricordare,
-                delle foto che mi rappresentano. Puoi sfogliare la galleria, mettere "mi piace"
-                e lasciare commenti sotto le immagini.
-              </p>
-            </div>
+          <a href="viaggi.html" class="section-card-home">
+            <h3>📸 I miei viaggi e le mie foto</h3>
+            <p class="text-muted">
+              Raccolta dei posti in cui sono stato, dei momenti che vale la pena ricordare,
+              delle foto che mi rappresentano. Puoi sfogliare la galleria, mettere "mi piace"
+              e lasciare commenti sotto le immagini.
+            </p>
           </a>
 
           <!-- CARD VIDEO -->
-          <a href="video.html" class="card panel-3d" style="text-decoration:none;">
-            <div class="card-inner">
-              <h3>🎬 Video</h3>
-              <p class="text-muted">
-                Prove video, partite di basket, esperimenti tecnici, clip salvate da YouTube.
-                Ogni video può avere i suoi commenti e i suoi "mi piace", così tengo traccia
-                di cosa mi colpisce di più.
-              </p>
-            </div>
+          <a href="video.html" class="section-card-home">
+            <h3>🎬 Video</h3>
+            <p class="text-muted">
+              Prove video, partite di basket, esperimenti tecnici, clip salvate da YouTube.
+              Ogni video può avere i suoi commenti e i suoi "mi piace", così tengo traccia
+              di quello che mi colpisce di più.
+            </p>
           </a>
         </div>
       </section>
@@ -120,9 +109,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>© NEXO – spazio personale</span>
-      <div class="footer-links">
-        <span>Versione di prova</span>
-      </div>
+      <span>Versione di prova</span>
     </div>
   </footer>
 </body>
