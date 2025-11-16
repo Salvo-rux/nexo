@@ -1,250 +1,229 @@
+/* FONT E COLORI */
 :root {
-  --bg: #050811;
-  --bg-alt: #0b1524;
+  --bg: #020617;
+  --panel: #0a1224;
+  --panel-light: #111b34;
   --accent: #00b7ff;
-  --accent-soft: rgba(0, 183, 255, 0.12);
-  --text: #f5f5f7;
-  --muted: #9ca3af;
-  --card-bg: #0f172a;
-  --border: rgba(148, 163, 184, 0.4);
+  --accent-glow: 0 0 28px rgba(0, 183, 255, 0.7);
+  --text: #e5f6ff;
+  --muted: #94a3b8;
 }
 
-/* RESET BASE */
+/* RESET */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background:
-    radial-gradient(900px 600px at 0% 0%, rgba(0, 183, 255, 0.22), transparent 60%),
-    radial-gradient(900px 600px at 100% 100%, rgba(56, 189, 248, 0.22), transparent 60%),
-    var(--bg);
+  font-family: "Montserrat", Arial, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(0,183,255,0.12), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(0,183,255,0.12), transparent 60%),
+              var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* HEADER / TOPBAR */
+/* EFFETTO 3D GLOBALE */
+.section, .post-box {
+  perspective: 1500px;
+}
+
+/* TOPBAR 3D */
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 20;
-  padding: 10px 18px;
+  z-index: 200;
+  padding: 14px 28px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 6, 23, 0.7);
   backdrop-filter: blur(14px);
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 8, 17, 0.95),
-    rgba(5, 8, 17, 0.6)
-  );
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo {
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  font-size: 0.95rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: var(--accent-glow);
 }
 
 .menu a {
-  color: var(--muted);
+  font-size: 1rem;
+  margin-left: 20px;
   text-decoration: none;
-  margin-left: 16px;
-  font-size: 0.9rem;
-  transition: color 0.16s ease, transform 0.12s ease;
+  color: var(--muted);
+  transition: 0.2s ease;
 }
 
 .menu a:hover {
   color: var(--accent);
-  transform: translateY(-1px);
+  text-shadow: var(--accent-glow);
 }
 
-/* LAYOUT GENERALE */
+/* LAYOUT SEZIONI */
 main {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 20px 14px 40px;
+  padding: 30px 20px 60px;
 }
 
+/* CARD 3D */
 .section {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(10, 16, 30, 0.98));
-  border-radius: 18px;
-  padding: 22px 18px;
-  margin-top: 18px;
-  border: 1px solid var(--border);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, var(--panel), var(--panel-light));
+  padding: 30px 26px;
+  margin-top: 28px;
+  border-radius: 22px;
+  border: 1px solid rgba(0,183,255,0.35);
+  box-shadow: 0 25px 60px rgba(0,183,255,0.15),
+              inset 0 0 25px rgba(0,183,255,0.1);
+  transform: rotateX(4deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: rotateX(0deg) translateY(-8px);
+  box-shadow: 0 30px 80px rgba(0,183,255,0.25);
 }
 
 .section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
+  font-size: 2rem;
+  margin-bottom: 8px;
+  text-shadow: var(--accent-glow);
 }
 
 .section p {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   color: var(--muted);
 }
 
-/* HERO (HOME) */
+/* HERO POTENTE */
 .hero {
-  margin-top: 22px;
-  padding: 26px 20px 24px;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(0, 183, 255, 0.32), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.28), transparent 55%),
-    var(--card-bg);
+  background: linear-gradient(135deg, rgba(0,183,255,0.25), rgba(10,23,42,0.95));
+  padding: 45px 28px;
+  border-radius: 24px;
+  margin-top: 20px;
+  border: 1px solid rgba(0,183,255,0.4);
+  box-shadow: 0 30px 70px rgba(0,183,255,0.2);
 }
 
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 14px;
+  text-shadow: 0 0 30px rgba(0,183,255,0.8);
 }
 
 .hero p {
-  max-width: 520px;
-  color: var(--muted);
+  font-size: 1.3rem;
+  max-width: 650px;
 }
 
-/* BLOCCO CONTENUTO / POST */
+/* POST CON EFFETTO NEON 3D */
 .post-box {
-  margin-top: 16px;
-  padding: 16px 14px;
-  border-radius: 16px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
+  margin-top: 25px;
+  padding: 22px;
+  background: var(--panel-light);
+  border-radius: 18px;
+  border: 1px solid rgba(0,183,255,0.35);
+  box-shadow: 0 20px 50px rgba(0,183,255,0.12),
+              inset 0 0 25px rgba(0,183,255,0.12);
+  transform: rotateX(5deg);
+  transition: 0.25s ease;
+}
+
+.post-box:hover {
+  transform: rotateX(0deg) translateY(-6px);
 }
 
 .post-box h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-shadow: var(--accent-glow);
 }
 
-.post-box p {
-  font-size: 0.95rem;
-}
-
-/* REAZIONI (LIKE / LOVE) */
+/* REAZIONI */
 .reactions {
-  margin-top: 10px;
-  font-size: 1.1rem;
+  margin-top: 12px;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 20px;
 }
 
 .reactions span {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-right: 14px;
   cursor: pointer;
-  user-select: none;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid transparent;
-  transition: transform 0.1s ease, border-color 0.15s ease, background 0.15s ease;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: #050e1f;
+  border: 1px solid rgba(0,183,255,0.3);
+  box-shadow: inset 0 0 15px rgba(0,183,255,0.3);
+  transition: 0.2s ease;
 }
 
 .reactions span:hover {
-  transform: translateY(-1px);
-  border-color: rgba(148, 163, 184, 0.8);
-  background: rgba(15, 23, 42, 1);
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 20px rgba(0,183,255,0.5),
+              0 0 20px rgba(0,183,255,0.5);
 }
 
-/* AREA COMMENTI */
+/* COMMENTI */
 .comment-area {
-  margin-top: 14px;
-}
-
-.comment-area h4 {
-  font-size: 1rem;
-  margin-bottom: 6px;
+  margin-top: 18px;
 }
 
 .comment-area textarea {
   width: 100%;
-  min-height: 70px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #020617;
+  height: 90px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,183,255,0.4);
+  padding: 12px;
+  font-size: 1rem;
+  background: #030915;
   color: var(--text);
-  padding: 8px 9px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  resize: vertical;
-  outline: none;
-}
-
-.comment-area textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(0, 183, 255, 0.4);
+  box-shadow: inset 0 0 18px rgba(0,183,255,0.2);
 }
 
 .comment-area button {
-  margin-top: 8px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.8);
-  background: radial-gradient(circle at 0% 0%, rgba(0, 183, 255, 0.4), #020617);
-  color: #e5f6ff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--accent);
+  border: none;
+  color: #00121f;
+  font-weight: 700;
+  font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 12px 26px rgba(8, 47, 73, 0.8);
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 12px 30px rgba(0,183,255,0.6);
+  transition: 0.2s ease;
 }
 
 .comment-area button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(8, 47, 73, 0.85);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,183,255,0.75);
 }
 
 #comment-list {
-  margin-top: 10px;
-  padding-left: 18px;
-  list-style: disc;
+  margin-top: 12px;
+  padding-left: 20px;
 }
 
 #comment-list li {
-  font-size: 0.9rem;
+  margin-bottom: 6px;
   color: var(--muted);
-  margin-bottom: 4px;
+  font-size: 1rem;
 }
 
 /* FOOTER */
 .footer {
-  max-width: 900px;
-  margin: 18px auto 26px;
-  padding: 6px 14px 0;
-  font-size: 0.8rem;
-  color: var(--muted);
   text-align: center;
-}
-
-/* RESPONSIVE */
-@media (min-width: 720px) {
-  .topbar {
-    padding-inline: 26px;
-  }
-
-  main {
-    padding-inline: 26px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .section {
-    padding: 24px 22px;
-  }
-
-  .post-box {
-    padding: 18px 16px;
-  }
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
