@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NEXO – Galleria foto</title>
+  <title>NEXO – Galleria foto viaggi, natura e progetti</title>
+
+  <meta name="description" content="Galleria fotografica NEXO: Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve, natura, museo Ferrari, lavori elettrici professionali e molto altro.">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -29,7 +31,9 @@
         <span class="tagline">NEXO · GALLERIA FOTO</span>
         <h1>Galleria dei miei viaggi e momenti</h1>
         <p class="hero-text">
-          Una raccolta dei posti che ho visto e dei momenti importanti.
+          Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve,
+          natura, musei Ferrari e anche il mio lavoro nel mondo elettrico:
+          una raccolta di posti vissuti e momenti importanti.
           Sotto ogni foto puoi lasciare un "mi piace" e un commento (salvati solo nel tuo dispositivo).
         </p>
       </div>
@@ -67,48 +71,47 @@
   <script>
     (function () {
 
-     const photos = [ 
-  { id: "p4", file: "0D325D15-68D7-4008-ADA1-CB847C27A298-L0-001-min.jpeg", caption: "Foto 4" },
-  { id: "p5", file: "1465405923162-min.jpg", caption: "Foto 5" },
-  { id: "p6", file: "1469370405831-min.jpg", caption: "Foto 6" },
-  { id: "p7", file: "1470419988221-min.jpg", caption: "Foto 7" },
-  { id: "p8", file: "1471198944400-min.jpg", caption: "Foto 8" },
-  { id: "p9", file: "1A9C3D81-D98C-4D90-B013-610B34A96EE3-L0-001-min.jpeg", caption: "Foto 9" },
-  { id: "p10", file: "20150829_092033-min.jpg", caption: "Foto 10" },
-  { id: "p11", file: "20150830_133559-min.jpg", caption: "Foto 11" },
-  { id: "p12", file: "20150830_142003-min.jpg", caption: "Foto 12" },
-  { id: "p13", file: "20150831_103626-min.jpg", caption: "Foto 13" },
-  { id: "p14", file: "20150831_114443-min.jpg", caption: "Foto 14" },
-  { id: "p15", file: "20150901_071447-min.jpg", caption: "Foto 15" },
-  { id: "p16", file: "20150901_181008-min.jpg", caption: "Foto 16" },
-  { id: "p17", file: "20150903_064534-min.jpg", caption: "Foto 17" },
-  { id: "p18", file: "20150903_093623-min.jpg", caption: "Foto 18" },
-  { id: "p19", file: "20150904_080719-min.jpg", caption: "Foto 19" },
-  { id: "p20", file: "2327FF89-2F1E-4066-92B4-85C3F81CD458-L0-001-min.jpeg", caption: "Foto 20" },
-  { id: "p21", file: "35BAA0E6-2954-48F1-ADE3-13C74D8B535A-L0-001-min.PNG", caption: "Foto 21" },
-  { id: "p22", file: "474710CD-EE94-44CC-A2D9-CD301D64E84F-L0-001-min.jpeg", caption: "Foto 22" },
-  { id: "p23", file: "49300F65-A6D7-40B2-9E1B-E96B99EBFD32-L0-001-min.jpeg", caption: "Foto 23" },
-  { id: "p24", file: "5F1B9905-C93A-4D79-A5AE-8B6E57430588-L0-001-min.jpeg", caption: "Foto 24" },
-  { id: "p25", file: "671A1ED9-7ED1-4FE5-987C-10B83ECAFD32-L0-001-min.PNG", caption: "Foto 25" },
-  { id: "p26", file: "78541821-D368-4B49-879A-6A1205C6E9BD-L0-001-min.PNG", caption: "Foto 26" },
-  { id: "p27", file: "8FCF3DE8-03B1-4EF0-9707-E7E0AF711375-L0-001-min.jpeg", caption: "Foto 27" },
-  { id: "p28", file: "9E36E316-BEAA-4E95-ACE6-C3A7B7145A75-L0-001-min.jpeg", caption: "Foto 28" },
-  { id: "p29", file: "A3FF6DDD-4CDF-479A-863C-626C95265396-L0-001-min.PNG", caption: "Foto 29" },
-  { id: "p30", file: "DSCF2491-min.JPG", caption: "Foto 30" },
-  { id: "p31", file: "Foto(143)-min.jpg", caption: "Foto 31" },
-  { id: "p32", file: "IMAG0070-min.jpg", caption: "Foto 32" },
-  { id: "p33", file: "IMAG0072-min.jpg", caption: "Foto 33" },
-  { id: "p34", file: "IMAG0077-min.jpg", caption: "Foto 34" },
-  { id: "p35", file: "IMG_0092-min.JPG", caption: "Foto 35" },
-  { id: "p36", file: "IMG_0115-min.JPG", caption: "Foto 36" },
-  { id: "p37", file: "IMG_0370-min.JPG", caption: "Foto 37" },
-  { id: "p38", file: "IMG_0478-min.JPG", caption: "Foto 38" },
-  { id: "p39", file: "IMG_0482-min.JPG", caption: "Foto 39" },
-  { id: "p40", file: "IMG_0540-min.JPG", caption: "Foto 40" },
-  { id: "p41", file: "IMG_0550-min.JPG", caption: "Foto 41" },
-  { id: "p42", file: "a151ee06-fca7-487a-ae86-47712de360b9-min.JPG", caption: "Foto 42" }
-];
- 
+      const photos = [
+        { id: "p4",  file: "sicilia-madonie.jpeg",                 caption: "Sicilia – Madonie" },
+        { id: "p5",  file: "sirmione.jpg",                         caption: "Sirmione – Lago di Garda" },
+        { id: "p6",  file: "cefalu.jpg",                           caption: "Cefalù – costa siciliana" },
+        { id: "p7",  file: "ritratto.jpg",                         caption: "Ritratto dell'autore NEXO" },
+        { id: "p8",  file: "altopiano-di-asiago.jpg",              caption: "Altopiano di Asiago" },
+        { id: "p9",  file: "museo-ferrari.jpeg",                   caption: "Museo Ferrari – auto storiche" },
+        { id: "p10", file: "crociera.jpg",                         caption: "Crociera – vista dal ponte" },
+        { id: "p11", file: "dubrovnik.jpg",                        caption: "Dubrovnik – panorama sulla città" },
+        { id: "p12", file: "dubrovnik-2.jpg",                      caption: "Dubrovnik – mura e tetti" },
+        { id: "p13", file: "isole-greche.jpg",                     caption: "Isole greche – mare e isole" },
+        { id: "p14", file: "isole-greche-2.jpg",                   caption: "Isole greche – tramonto sul mare" },
+        { id: "p15", file: "crociera-2.jpg",                       caption: "Crociera – vita di bordo" },
+        { id: "p16", file: "crociera-3.jpg",                       caption: "Crociera – scia sul mare" },
+        { id: "p17", file: "crociera-4.jpg",                       caption: "Crociera – nave in navigazione" },
+        { id: "p18", file: "spalato.jpg",                          caption: "Spalato – centro storico" },
+        { id: "p19", file: "venezia.jpg",                          caption: "Venezia – gondole e canali" },
+        { id: "p20", file: "sicilia-madonie-2.jpeg",               caption: "Sicilia – strada panoramica Madonie" },
+        { id: "p21", file: "villa-cordellina.PNG",                 caption: "Villa Cordellina – esterno" },
+        { id: "p22", file: "pizza.jpeg",                           caption: "Pizza appena sfornata" },
+        { id: "p23", file: "neve-a-vicenza.jpeg",                  caption: "Neve a Vicenza" },
+        { id: "p24", file: "museo-ferrari-2.jpeg",                 caption: "Museo Ferrari – monoposto da corsa" },
+        { id: "p25", file: "box-ferrari.PNG",                      caption: "Box Ferrari – vettura in pit lane" },
+        { id: "p26", file: "villa-cordellina-2.PNG",               caption: "Villa Cordellina – facciata e giardino" },
+        { id: "p27", file: "mare-sicilia.jpeg",                    caption: "Mare Sicilia – costa e onde" },
+        { id: "p28", file: "mare-sicilia-2.jpeg",                  caption: "Mare Sicilia – acqua azzurra" },
+        { id: "p29", file: "sicilia-madonie-3.PNG",                caption: "Sicilia – Madonie viste dall'alto" },
+        { id: "p30", file: "casa-di-montalbano.JPG",               caption: "La casa del Commissario Montalbano" },
+        { id: "p31", file: "neve-madonie.jpg",                     caption: "Neve sulle Madonie" },
+        { id: "p32", file: "santuario-madonna-dell-alto.jpg",      caption: "Santuario Madonna dell'Alto – Madonie" },
+        { id: "p33", file: "santuario-madonna-dell-alto-2.jpg",    caption: "Santuario Madonna dell'Alto – vista panoramica" },
+        { id: "p34", file: "veduta-monte-alto.jpg",                caption: "Veduta dal monte – orizzonte lontano" },
+        { id: "p35", file: "quadro-elettrico-in-lavorazione.JPG",  caption: "Quadro elettrico in lavorazione" },
+        { id: "p36", file: "collegamento-interruttori.JPG",        caption: "Collegamento interruttori – dettaglio impianto" },
+        { id: "p37", file: "sicilia-madonie-4.JPG",                caption: "Sicilia – sentiero nelle Madonie" },
+        { id: "p38", file: "natura.JPG",                           caption: "Natura – dettaglio vegetazione" },
+        { id: "p39", file: "natura-2.JPG",                         caption: "Natura – foglie e verde" },
+        { id: "p40", file: "neve-madonie-2.JPG",                   caption: "Madonie – paesaggio innevato" },
+        { id: "p41", file: "neve-madonie-3.JPG",                   caption: "Madonie – strada nella neve" },
+        { id: "p42", file: "ferrari-1000-gp.JPG",                  caption: "Ferrari 1000 GP – monoposto rossa" }
+      ];
 
       const PHOTO_KEY = "nexo_gallery_data_v2";
 
