@@ -16,22 +16,21 @@
     <div class="logo">NEXO</div>
     <nav class="menu">
       <a href="index.html">Home</a>
-      <a href="galleria.html">Galleria</a>
+      <a href="galleria.html" class="active">Galleria</a>
       <a href="index.html#contenuti">Video</a>
     </nav>
   </header>
 
   <main>
 
-    <!-- HERO GALLERIA -->
+    <!-- HERO CLASSICO -->
     <section class="section hero">
       <div class="section-inner">
         <span class="tagline">NEXO · GALLERIA FOTO</span>
         <h1>Galleria dei miei viaggi e momenti</h1>
         <p class="hero-text">
-          Una raccolta di foto dei posti che ho visto, dei momenti che voglio ricordare e
-          delle immagini che mi rappresentano. Sotto ogni foto puoi mettere "mi piace" e
-          lasciare un commento.
+          Una raccolta dei posti che ho visto e dei momenti importanti.
+          Sotto ogni foto puoi lasciare un "mi piace" e un commento (salvati solo nel tuo dispositivo).
         </p>
       </div>
     </section>
@@ -41,21 +40,20 @@
       <div class="section-inner">
         <h2>Le mie foto</h2>
         <p>
-          Ogni foto ha il suo "mi piace" e il suo spazio per i commenti. Tutto viene salvato
-          solo nel tuo browser, nessun dato va online.
+          Nessun dato viene inviato online: like e commenti rimangono solo nel tuo browser.
         </p>
 
         <div class="photo-grid" id="photo-grid"></div>
       </div>
     </section>
 
-    <div class="footer">
-      © 2025 NEXO – galleria foto · Versione di prova
-    </div>
+    <footer class="footer">
+      © 2025 NEXO – Galleria foto · Versione classica
+    </footer>
 
   </main>
 
-  <!-- MODALE FOTO GRANDE -->
+  <!-- MODALE FOTO -->
   <div class="photo-modal" id="photo-modal">
     <div class="photo-modal-backdrop"></div>
     <div class="photo-modal-content">
@@ -65,21 +63,20 @@
     </div>
   </div>
 
-  <!-- SCRIPT: GESTIONE GALLERIA + LIKE + COMMENTI -->
+  <!-- SCRIPT COMPLETO -->
   <script>
     (function () {
-      // ELENCO DI TUTTE LE FOTO NELLA CARTELLA "foto"
-      // (quelle che mi hai mandato finora)
+
       const photos = [
         { id: "p1", file: "0584B5A9-9E7E-4A35-9502-7287BA6746F9-10-001-min.jpeg", caption: "Foto 1" },
         { id: "p2", file: "0D325D15-68D7-4008-ADA1-CB847C27A298-L0-001-min.jpeg", caption: "Foto 2" },
-       { id: "p3", file: "143C9D1D-9DBE-4D90-B013-610B34A96EE3-L0-001-min.jpeg", caption: "Foto 3" },
-        { id: "p4",  file: "0D325D15-68D7-4008-ADA1-CB847C27A298-L0-001-min.jpeg", caption: "Foto 4" },
-        { id: "p5",  file: "1465405923162-min.jpg", caption: "Foto 5" },
-        { id: "p6",  file: "1469370405831-min.jpg", caption: "Foto 6" },
-        { id: "p7",  file: "1470419988221-min.jpg", caption: "Foto 7" },
-        { id: "p8",  file: "1471198944400-min.jpg", caption: "Foto 8" },
-        { id: "p9",  file: "1A9C3D81-D98C-4D90-B013-610B34A96EE3-L0-001-min.jpeg", caption: "Foto 9" },
+        { id: "p3", file: "143C9D1D-9DBE-4D90-B013-610B34A96EE3-L0-001-min.jpeg", caption: "Foto 3" },
+        { id: "p4", file: "0D325D15-68D7-4008-ADA1-CB847C27A298-L0-001-min.jpeg", caption: "Foto 4" },
+        { id: "p5", file: "1465405923162-min.jpg", caption: "Foto 5" },
+        { id: "p6", file: "1469370405831-min.jpg", caption: "Foto 6" },
+        { id: "p7", file: "1470419988221-min.jpg", caption: "Foto 7" },
+        { id: "p8", file: "1471198944400-min.jpg", caption: "Foto 8" },
+        { id: "p9", file: "1A9C3D81-D98C-4D90-B013-610B34A96EE3-L0-001-min.jpeg", caption: "Foto 9" },
         { id: "p10", file: "20150829_092033-min.jpg", caption: "Foto 10" },
         { id: "p11", file: "20150830_133559-min.jpg", caption: "Foto 11" },
         { id: "p12", file: "20150830_142003-min.jpg", caption: "Foto 12" },
@@ -139,9 +136,10 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+
         const grid = document.getElementById("photo-grid");
 
-        // COSTRUISCO LE CARD DELLE FOTO
+        // GENERAZIONE CARD
         photos.forEach(function (p) {
           const card = document.createElement("div");
           card.className = "photo-card";
@@ -149,9 +147,10 @@
 
           card.innerHTML = `
             <div class="photo-thumb">
-              <img src="foto/${p.file}" alt="${p.caption || "Foto"}" data-photo-id="${p.id}">
+              <img src="foto/${p.file}" alt="${p.caption}" data-photo-id="${p.id}">
             </div>
-            <p class="photo-caption">${p.caption || ""}</p>
+
+            <p class="photo-caption">${p.caption}</p>
 
             <div class="reactions photo-reactions">
               <span class="photo-react" data-photo="${p.id}" data-react="heart">
@@ -161,11 +160,9 @@
 
             <div class="comment-area">
               <h4>Commenti</h4>
-              <p class="comment-note">
-                I commenti vengono salvati solo sul tuo dispositivo.
-              </p>
+              <p class="comment-note">Salvati solo nel dispositivo.</p>
 
-              <textarea class="photo-comment-input" data-photo="${p.id}" placeholder="Scrivi un commento sulla foto..."></textarea>
+              <textarea class="photo-comment-input" data-photo="${p.id}" placeholder="Scrivi un commento..."></textarea>
               <button class="photo-add-comment" data-photo="${p.id}">Aggiungi commento</button>
 
               <ul class="photo-comment-list" data-photo="${p.id}"></ul>
@@ -175,57 +172,46 @@
           grid.appendChild(card);
         });
 
-        // STORE LOCALE
         const store = loadStore();
 
-        // Inizializza like
+        // LIKE
         document.querySelectorAll(".photo-count").forEach(function (span) {
-          const photoId = span.dataset.photo;
-          const reaction = span.dataset.react;
-          ensurePhoto(store, photoId);
-          span.textContent = store[photoId].likes[reaction] || 0;
+          const id = span.dataset.photo;
+          ensurePhoto(store, id);
+          span.textContent = store[id].likes.heart;
         });
 
-        // Inizializza commenti
-        document.querySelectorAll(".photo-comment-list").forEach(function (list) {
-          const photoId = list.dataset.photo;
-          ensurePhoto(store, photoId);
-          (store[photoId].comments || []).forEach(function (text) {
-            const li = document.createElement("li");
-            li.textContent = text;
-            list.appendChild(li);
-          });
-        });
-
-        // Click "mi piace"
         document.querySelectorAll(".photo-react").forEach(function (btn) {
           btn.addEventListener("click", function () {
-            const photoId = btn.dataset.photo;
-            const reaction = btn.dataset.react;
-            ensurePhoto(store, photoId);
-            store[photoId].likes[reaction] = (store[photoId].likes[reaction] || 0) + 1;
-
-            const span = document.querySelector(
-              '.photo-count[data-photo="' + photoId + '"][data-react="' + reaction + '"]'
-            );
-            if (span) span.textContent = store[photoId].likes[reaction];
+            const id = btn.dataset.photo;
+            ensurePhoto(store, id);
+            store[id].likes.heart++;
+            document.querySelector(`.photo-count[data-photo="${id}"]`).textContent = store[id].likes.heart;
             saveStore(store);
           });
         });
 
-        // Aggiunta commenti
+        // COMMENTI
+        document.querySelectorAll(".photo-comment-list").forEach(function (el) {
+          const id = el.dataset.photo;
+          ensurePhoto(store, id);
+          store[id].comments.forEach(function (t) {
+            const li = document.createElement("li");
+            li.textContent = t;
+            el.appendChild(li);
+          });
+        });
+
         document.querySelectorAll(".photo-add-comment").forEach(function (btn) {
           btn.addEventListener("click", function () {
-            const photoId = btn.dataset.photo;
-            const input = document.querySelector('.photo-comment-input[data-photo="' + photoId + '"]');
-            const list = document.querySelector('.photo-comment-list[data-photo="' + photoId + '"]');
-            if (!input || !list) return;
-
-            const text = (input.value || "").trim();
+            const id = btn.dataset.photo;
+            const input = document.querySelector(`.photo-comment-input[data-photo="${id}"]`);
+            const list = document.querySelector(`.photo-comment-list[data-photo="${id}"]`);
+            const text = input.value.trim();
             if (!text) return;
 
-            ensurePhoto(store, photoId);
-            store[photoId].comments.push(text);
+            ensurePhoto(store, id);
+            store[id].comments.push(text);
 
             const li = document.createElement("li");
             li.textContent = text;
@@ -236,16 +222,16 @@
           });
         });
 
-        // MODALE FOTO GRANDE
+        // MODALE
         const modal = document.getElementById("photo-modal");
         const modalImg = document.getElementById("modal-image");
         const modalCaption = document.getElementById("modal-caption");
         const modalClose = document.getElementById("photo-modal-close");
         const modalBackdrop = document.querySelector(".photo-modal-backdrop");
 
-        function openModal(src, caption) {
+        function openModal(src, cap) {
           modalImg.src = src;
-          modalCaption.textContent = caption || "";
+          modalCaption.textContent = cap || "";
           modal.classList.add("open");
         }
 
@@ -257,10 +243,8 @@
 
         document.querySelectorAll(".photo-thumb img").forEach(function (img) {
           img.addEventListener("click", function () {
-            const src = img.getAttribute("src");
-            const card = img.closest(".photo-card");
-            const captionEl = card ? card.querySelector(".photo-caption") : null;
-            const caption = captionEl ? captionEl.textContent.trim() : "";
+            const src = img.src;
+            const caption = img.closest(".photo-card").querySelector(".photo-caption").textContent;
             openModal(src, caption);
           });
         });
@@ -271,6 +255,7 @@
           if (e.key === "Escape") closeModal();
         });
       });
+
     })();
   </script>
 
