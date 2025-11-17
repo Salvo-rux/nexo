@@ -398,3 +398,15 @@ main {
     font-size: 1.05rem;
   }
 }
+/* ROTAZIONE FOTO SPECIFICHE */
+img[data-photo-id="p21"] {
+  transform: rotate(90deg);
+}
+
+img[data-photo-id="p26"] {
+  transform: rotate(-90deg);
+}
+
+img[data-photo-id="p29"] {
+  transform: rotate(-90deg);
+}
