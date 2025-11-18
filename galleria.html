@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NEXO – Galleria foto viaggi, natura e progetti</title>
 
-  <meta name="description" content="Galleria fotografica NEXO: Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve, natura, museo Ferrari, lavori elettrici e tanti momenti personali.">
+  <meta name="description" content="Galleria fotografica NEXO: Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve, natura, musei Ferrari, lavori elettrici e tanti momenti personali.">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -78,7 +78,7 @@
         { id: "n7",  file: "brav-bravi.jpg",              caption: "Bravissimi!" },
         { id: "n8",  file: "buon-compleanno.JPG",         caption: "Buon compleanno" },
         { id: "n9",  file: "ferragosto.JPG",              caption: "Ferragosto" },
-        { id: "n10", file: "gigi.JPG",                     caption: "Gigi" },
+        { id: "n10", file: "gig.JPG",                     caption: "Gig" },
         { id: "n11", file: "lecco.JPG",                   caption: "Lecco – gita" },
         { id: "n12", file: "passeggiata-popiglio.jpg",    caption: "Passeggiata a Popiglio" },
         { id: "n13", file: "popiglio-ponte.JPG",          caption: "Popiglio – ponte" },
@@ -133,7 +133,6 @@
 
         const grid = document.getElementById("photo-grid");
 
-        // GENERAZIONE CARD SEMPLICE
         photos.forEach(function (p) {
           const card = document.createElement("div");
           card.className = "photo-card";
@@ -145,7 +144,6 @@
             <p class="photo-caption">${p.caption}</p>
           `;
 
-          // Apri modale
           card.querySelector("img").addEventListener("click", function () {
             openModal(\`foto/${p.file}\`, p.caption);
           });
@@ -153,7 +151,6 @@
           grid.appendChild(card);
         });
 
-        // MODALE
         const modal = document.getElementById("photo-modal");
         const modalImg = document.getElementById("modal-image");
         const modalCaption = document.getElementById("modal-caption");
