@@ -405,6 +405,7 @@ main {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
 /* --------------------------------------------------
    PULSANTE HERO (APRI GALLERIA FOTO)
 -------------------------------------------------- */
@@ -413,24 +414,34 @@ main {
   padding: 10px 22px;
   margin-top: 14px;
 
-  color: #ffffff;                    /* testo bianco vivo */
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.5px;
 
-  border: 2px solid var(--accent);  /* bordo blu NEXO */
+  border: 2px solid var(--accent);
   border-radius: 12px;
 
-  background: rgba(0, 10, 20, 0.55); /* sfondo per farlo risaltare */
+  background: rgba(0, 10, 20, 0.55);
   backdrop-filter: blur(4px);
 
   transition: 0.25s ease;
 }
 
 .hero-buttons a:hover {
-  background: var(--accent);        /* acceso al passaggio mouse */
+  background: var(--accent);
   color: #000;
   box-shadow: 0 0 12px #33d4ff;
+}
+
+/* --------------------------------------------------
+   ⭐ SCRITTA GIALLO SUPER VISIBILE (apri la galleria foto)
+-------------------------------------------------- */
+a[href="galleria.html"] {
+  color: #ffeb3b !important;          /* giallo forte */
+  font-weight: 900 !important;        /* massimo spessore */
+  text-decoration: underline !important;
+  text-shadow: 0 0 8px rgba(255, 235, 59, 0.8); /* glow giallo */
 }
 
 /* --------------------------------------------------
@@ -469,23 +480,8 @@ main {
 }
 
 /* --------------------------------------------------
-   ROTAZIONE FOTO SPECIFICHE (THUMBNAIL)
+   ROTAZIONE FOTO SPECIFICHE
 -------------------------------------------------- */
-img[data-photo-id="p21"] {
-  transform: rotate(90deg);
-}
-
-img[data-photo-id="p26"] {
-  transform: rotate(-90deg);
-}
-
-img[data-photo-id="p29"] {
-  transform: rotate(-90deg);
-}
-/* Rende molto visibile il link "apri la galleria foto" */
-a[href="galleria.html"] {
-  color: #7ee9ff !important;   /* azzurro brillante */
-  font-weight: 900 !important; /* super visibile */
-  text-decoration: underline !important;
-  text-shadow: 0 0 6px rgba(126,233,255,0.7); /* leggero bagliore */
-}
+img[data-photo-id="p21"] { transform: rotate(90deg); }
+img[data-photo-id="p26"] { transform: rotate(-90deg); }
+img[data-photo-id="p29"] { transform: rotate(-90deg); }
