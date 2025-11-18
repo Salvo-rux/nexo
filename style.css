@@ -482,3 +482,10 @@ img[data-photo-id="p26"] {
 img[data-photo-id="p29"] {
   transform: rotate(-90deg);
 }
+/* Rende molto visibile il link "apri la galleria foto" */
+a[href="galleria.html"] {
+  color: #7ee9ff !important;   /* azzurro brillante */
+  font-weight: 900 !important; /* super visibile */
+  text-decoration: underline !important;
+  text-shadow: 0 0 6px rgba(126,233,255,0.7); /* leggero bagliore */
+}
