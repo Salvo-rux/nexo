@@ -405,6 +405,33 @@ main {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+/* --------------------------------------------------
+   PULSANTE HERO (APRI GALLERIA FOTO)
+-------------------------------------------------- */
+.hero-buttons a {
+  display: inline-block;
+  padding: 10px 22px;
+  margin-top: 14px;
+
+  color: #ffffff;                    /* testo bianco vivo */
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  border: 2px solid var(--accent);  /* bordo blu NEXO */
+  border-radius: 12px;
+
+  background: rgba(0, 10, 20, 0.55); /* sfondo per farlo risaltare */
+  backdrop-filter: blur(4px);
+
+  transition: 0.25s ease;
+}
+
+.hero-buttons a:hover {
+  background: var(--accent);        /* acceso al passaggio mouse */
+  color: #000;
+  box-shadow: 0 0 12px #33d4ff;
+}
 
 /* --------------------------------------------------
    RESPONSIVE
