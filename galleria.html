@@ -34,7 +34,6 @@
           Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve,
           natura, musei Ferrari e anche il mio lavoro nel mondo elettrico:
           una raccolta di posti vissuti e momenti importanti.
-          Sotto ogni foto puoi lasciare un "mi piace" e un commento (salvati solo nel tuo dispositivo).
         </p>
       </div>
     </section>
@@ -43,9 +42,6 @@
     <section class="section">
       <div class="section-inner">
         <h2>Le mie foto</h2>
-        <p>
-          Nessun dato viene inviato online: like e commenti rimangono solo nel tuo browser.
-        </p>
 
         <div class="photo-grid" id="photo-grid"></div>
       </div>
@@ -67,7 +63,7 @@
     </div>
   </div>
 
-  <!-- SCRIPT COMPLETO -->
+  <!-- SCRIPT FOTO SENZA COMMENTI/LIKE -->
   <script>
     (function () {
 
@@ -112,114 +108,28 @@
         { id: "p42", file: "ferrari-1000-gp.jpg",                 caption: "Ferrari 1000 GP – monoposto rossa" }
       ];
 
-      const PHOTO_KEY = "nexo_gallery_data_v2";
-
-      function loadStore() {
-        try {
-          return JSON.parse(localStorage.getItem(PHOTO_KEY) || "{}");
-        } catch (e) {
-          return {};
-        }
-      }
-
-      function saveStore(store) {
-        localStorage.setItem(PHOTO_KEY, JSON.stringify(store));
-      }
-
-      function ensurePhoto(store, id) {
-        if (!store[id]) {
-          store[id] = {
-            likes: { heart: 0 },
-            comments: []
-          };
-        }
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
 
         const grid = document.getElementById("photo-grid");
 
-        // GENERAZIONE CARD
+        // GENERAZIONE CARD SEMPLICE
         photos.forEach(function (p) {
           const card = document.createElement("div");
           card.className = "photo-card";
-          card.dataset.photo = p.id;
 
           card.innerHTML = `
             <div class="photo-thumb">
-              <img src="foto/${p.file}" alt="${p.caption}" data-photo-id="${p.id}">
+              <img src="foto/${p.file}" alt="${p.caption}">
             </div>
-
             <p class="photo-caption">${p.caption}</p>
-
-            <div class="reactions photo-reactions">
-              <span class="photo-react" data-photo="${p.id}" data-react="heart">
-                💙 <b class="photo-count" data-photo="${p.id}" data-react="heart">0</b>
-              </span>
-            </div>
-
-            <div class="comment-area">
-              <h4>Commenti</h4>
-              <p class="comment-note">Salvati solo nel dispositivo.</p>
-
-              <textarea class="photo-comment-input" data-photo="${p.id}" placeholder="Scrivi un commento..."></textarea>
-              <button class="photo-add-comment" data-photo="${p.id}">Aggiungi commento</button>
-
-              <ul class="photo-comment-list" data-photo="${p.id}"></ul>
-            </div>
           `;
 
+          // Apri modale
+          card.querySelector("img").addEventListener("click", function () {
+            openModal(`foto/${p.file}`, p.caption);
+          });
+
           grid.appendChild(card);
-        });
-
-        const store = loadStore();
-
-        // LIKE
-        document.querySelectorAll(".photo-count").forEach(function (span) {
-          const id = span.dataset.photo;
-          ensurePhoto(store, id);
-          span.textContent = store[id].likes.heart;
-        });
-
-        document.querySelectorAll(".photo-react").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            const id = btn.dataset.photo;
-            ensurePhoto(store, id);
-            store[id].likes.heart++;
-            document.querySelector(`.photo-count[data-photo="${id}"]`).textContent = store[id].likes.heart;
-            saveStore(store);
-          });
-        });
-
-        // COMMENTI
-        document.querySelectorAll(".photo-comment-list").forEach(function (el) {
-          const id = el.dataset.photo;
-          ensurePhoto(store, id);
-          store[id].comments.forEach(function (t) {
-            const li = document.createElement("li");
-            li.textContent = t;
-            el.appendChild(li);
-          });
-        });
-
-        document.querySelectorAll(".photo-add-comment").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            const id = btn.dataset.photo;
-            const input = document.querySelector(`.photo-comment-input[data-photo="${id}"]`);
-            const list = document.querySelector(`.photo-comment-list[data-photo="${id}"]`);
-            const text = input.value.trim();
-            if (!text) return;
-
-            ensurePhoto(store, id);
-            store[id].comments.push(text);
-
-            const li = document.createElement("li");
-            li.textContent = text;
-            list.appendChild(li);
-
-            input.value = "";
-            saveStore(store);
-          });
         });
 
         // MODALE
@@ -231,7 +141,7 @@
 
         function openModal(src, cap) {
           modalImg.src = src;
-          modalCaption.textContent = cap || "";
+          modalCaption.textContent = cap;
           modal.classList.add("open");
         }
 
@@ -241,19 +151,12 @@
           modalCaption.textContent = "";
         }
 
-        document.querySelectorAll(".photo-thumb img").forEach(function (img) {
-          img.addEventListener("click", function () {
-            const src = img.src;
-            const caption = img.closest(".photo-card").querySelector(".photo-caption").textContent;
-            openModal(src, caption);
-          });
-        });
-
         modalClose.addEventListener("click", closeModal);
         modalBackdrop.addEventListener("click", closeModal);
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape") closeModal();
         });
+
       });
 
     })();
