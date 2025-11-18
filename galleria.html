@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NEXO – Galleria foto viaggi, natura e progetti</title>
 
-  <meta name="description" content="Galleria fotografica NEXO: Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve, natura, musei Ferrari, lavori elettrici e tanti momenti personali.">
+  <meta name="description" content="Galleria fotografica NEXO: Sicilia e Madonie, Sirmione, Cefalù, Venezia, isole greche, crociere, neve, natura, museo Ferrari, lavori elettrici e tanti momenti personali.">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <!-- SCRIPT FOTO SENZA COMMENTI/LIKE -->
+  <!-- SCRIPT FOTO -->
   <script>
     (function () {
 
@@ -71,19 +71,19 @@
         /* --- NUOVE FOTO (cartella foto/) --- */
         { id: "n1",  file: "amici.jpg",                   caption: "Amici – selfie" },
         { id: "n2",  file: "articolo-pg1.jpg",            caption: "Articolo PC – pagina 1" },
-        { id: "n3",  file: "articolo-pg2.jpg",            caption: "Articolo PC – pagina 2" },
+        { id: "n3",  file: "articolo-pg2.jpg",            caption: "Articolo PC – pagina  2" },
         { id: "n4",  file: "articolo-pg3.jpg",            caption: "Articolo PC – pagina 3" },
         { id: "n5",  file: "articolo-pg4.jpg",            caption: "Articolo PC – pagina 4" },
         { id: "n6",  file: "bella-gente.jpg",             caption: "Bella gente" },
         { id: "n7",  file: "brav-bravi.jpg",              caption: "Bravissimi!" },
         { id: "n8",  file: "buon-compleanno.JPG",         caption: "Buon compleanno" },
         { id: "n9",  file: "ferragosto.JPG",              caption: "Ferragosto" },
-        { id: "n10", file: "gigi.JPG",                     caption: "Gigi" },
+        { id: "n10", file: "gig.JPG",                     caption: "Gig" },
         { id: "n11", file: "lecco.JPG",                   caption: "Lecco – gita" },
         { id: "n12", file: "passeggiata-popiglio.jpg",    caption: "Passeggiata a Popiglio" },
         { id: "n13", file: "popiglio-ponte.JPG",          caption: "Popiglio – ponte" },
         { id: "n14", file: "popiglio-spaghettata.JPG",    caption: "Popiglio – spaghettata" },
-        { id: "n15", file: "quadro-lavoro.jpg",           caption: "Quadro elettrico in lavoro" },
+        { id: "n15", file: "quadro-lavoro.jpg",           caption: "Quadro elettrico – lavoro" },
         { id: "n16", file: "tanti-saluti.jpg",            caption: "Tanti saluti" },
         { id: "n17", file: "tifoseria-spartans.JPG",      caption: "Tifoseria Spartans" },
         { id: "n18", file: "torneo-lecco.JPG",            caption: "Torneo a Lecco" },
@@ -144,8 +144,11 @@
             <p class="photo-caption">${p.caption}</p>
           `;
 
-          card.querySelector("img").addEventListener("click", function () {
-            openModal(\`foto/${p.file}\`, p.caption);
+          const imgEl = card.querySelector("img");
+          imgEl.dataset.photoId = p.id;  // per le rotazioni CSS p21/p26/p29
+
+          imgEl.addEventListener("click", function () {
+            openModal(`foto/${p.file}`, p.caption);
           });
 
           grid.appendChild(card);
